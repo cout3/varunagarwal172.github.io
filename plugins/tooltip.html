@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Tootip With Drag Drop-Varun</title>
+    <style type="text/css">
+        body{font-family: 'open sans'; box-sizing: border-box; margin: 0; padding: 0;height:2000px;width:2000px;}
+        body *{box-sizing: border-box;}
+        [data-toolpar="toolTipWrapper"]{font-size: 16px; border:1px solid #ccc; cursor: pointer; position: relative;width:250px;padding:20px; overflow:hidden;}
+
+        [data-type="toolTipText"]{padding:10px; background-color: rgba(0,0,0,.7); font-size: 12px; color:#fff; font-weight: 600; position: fixed; max-width:300px;float:left;opacity:0;top:-100%; left:-100%;}
+
+        [data-type="tooltipArrow"]{position: absolute;border-style: solid;display: none;}
+
+        [data-for="tooltipTop"]{border-color:transparent transparent rgba(0,0,0,.7) transparent; border-width:0 7px 7px 7px;top:-7px;}
+        [data-for="tooltipRight"]{border-color:transparent transparent transparent rgba(0,0,0,.7); border-width:7px 0 7px 7px;right:-7px;}
+        [data-for="tooltipBottom"]{border-color:rgba(0,0,0,.7)  transparent transparent transparent; border-width:7px 7px 0 7px;bottom:-7px;}
+        [data-for="tooltipLeft"]{border-color:transparent rgba(0,0,0,.7)  transparent transparent; border-width:7px 7px 7px 0;left:-7px;}
+
+        .horCenter{left:50%; transform:translateX(-50%);}
+        .verMiddle{top:50%; transform:translateY(-50%);}
+
+        .dummyData input{width: 500px; line-height: 25px; margin:10px;padding:5px; display: block;}
+        #setDim{width:100px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="dummyData" style="border-bottom: 1px solid; margin-bottom: 20px; background:#fafafa">
+        <input type="number" val="0" id="tipWidth" placeholder="Please enter the width of the tooltip in px" />
+        <input type="number" val="0" id="tipHeight" placeholder="Please enter the height of the tooltip in px" />
+    </div>
+
+    <div data-toolpar="toolTipWrapper" data-drag="draggable">
+        <div data-type="toolTipText">
+            <span data-type="tooltipArrow" data-for="tooltipTop"></span>
+            <span data-type="tooltipArrow" data-for="tooltipRight"></span>
+            <span data-type="tooltipArrow" data-for="tooltipBottom"></span>
+            <span data-type="tooltipArrow" data-for="tooltipLeft"></span>
+            Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum  Lorem ipsum lurum hururm turum 
+        </div>
+        Hover here to see the tooltip
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="pluginLib.js"></script>
+</html>
