@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Bounce Left Right-Varun</title>
+	<style type="text/css">
+	body{text-align: center;}
+	.dummydiv{width:200px; height:500px; background-color: #39c; display: inline-block; position: relative; cursor: pointer;}
+	.dummydiv span {
+	    color: #fff;
+	    font-size: 50px;
+	    position: absolute;
+	    top: 51%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    width: 100%;
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="leftRightBounce.css" />
+</head>
+<body>
+	<div class="dummydiv">
+		<span>Click here to see the effect</span>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$(".dummydiv").on('click',function(){
+			$(this).addClass("leftRightBounce").delay(800).queue(function(){
+				$(this).removeClass("leftRightBounce").dequeue();
+			})
+		});
+	})
+</script>
+</html>
