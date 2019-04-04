@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<head>
+	<title>Mobile Slider-Varun</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<style>
+	.mobHorSliderMainContainer ::-webkit-scrollbar{display:none}
+	.mobHorSliderMainContainer{box-sizing:border-box;padding:10px;color:#333;font-size:12px}
+	.mobHorSliderMainContainer *{box-sizing:border-box}
+	.mobHorSliderMainContainer a{text-decoration:none}
+	.mobHorSliderHead{font-size:14px;font-weight:600;position:relative;font-size:14px;font-weight:600;position:relative;padding:10px 5px;box-shadow:0 0 5px #ececec}
+	.mobHorSliderHead span{font-weight:400}
+	.mobHorSliderHeadRibbon{position:absolute;right:0;top:50%;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);font-size:12px;padding:3px 5px;color:#fff;background:orange}
+	.mobHorSliderBoxContainer{width:100%;overflow:hidden;overflow-x:scroll;margin:8px 0 0 -2px}
+	.mobHorSlider{padding:0 0 2px 2px; -webkit-transition: ease all .3s;-moz-transition: ease all .3s;-ms-transition: ease all .3s;-o-transition: ease all .3s;transition: ease all .3s;margin-left:50%;}
+	.mobHorSliderBox{width:170px;height:280px;margin:0 5px;color:#333;position:relative;float:left;box-shadow:0 0 5px #ececec}
+	.mobHorSliderBox:first-child{margin-left:0}
+	.mobHorSliderRibbonVerified{position:absolute;top:35%;right:0;padding:0 5px;line-height:16px;background-color:green;color:#fff;font-size:12px}
+	.mobHorSliderRibbonSeen{position:absolute;top:35%;padding:0 5px;line-height:16px;background-color:#333;color:#fff;font-size:12px}
+	.mobHorSliderImg{width:100%;height:123px;overflow:hidden}
+	.mobHorSliderImg img{width:100%;object-fit:cover}
+	.mobHorSliderTxt{padding:15px}
+	.mobHorSliderPrice{color:#39c;font-size:16px;font-weight:600}
+	.mobHorSliderPrice .mobHorSliderRup{font-weight:400;font-size:12px}
+	.mobHorSliderName{color:#666;font-weight:600;line-height:20px}
+	.mobHorSliderAddress{color:#999}
+	.mobHorSliderType{font-size:14px;font-weight:600;color:#666}
+	.mobHorSliderSize{color:#666;line-height:18px}
+	.mobHorSliderStatus{color:#59cdb5}
+
+	</style>
+</head>
+<body>
+	<div class="mobHorSliderMainContainer">
+		<div class="mobHorSliderHead">More Space <span>within</span> Same Budget
+			<div class="mobHorSliderHeadRibbon">Cheapest Deal</div>
+		</div>
+		<div class="mobHorSliderBoxContainer">
+			<div class="mobHorSlider">
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonVerified">Verifed</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="mobHorSliderMainContainer">
+		<div class="mobHorSliderHead">More Space <span>within</span> Same Budget
+			<div class="mobHorSliderHeadRibbon">Cheapest Deal</div>
+		</div>
+		<div class="mobHorSliderBoxContainer">
+			<div class="mobHorSlider">
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonVerified">Verifed</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="mobHorSliderMainContainer">
+		<div class="mobHorSliderHead">More Space <span>within</span> Same Budget
+			<div class="mobHorSliderHeadRibbon">Cheapest Deal</div>
+		</div>
+		<div class="mobHorSliderBoxContainer">
+			<div class="mobHorSlider">
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonVerified">Verifed</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<a href="" class="mobHorSliderBox">
+					<div class="mobHorSliderRibbonSeen">Seen</div>
+					<div class="mobHorSliderImg">
+						<img src="sample.jpg" alt="Project Name" />
+					</div>
+					<div class="mobHorSliderTxt">
+						<div class="mobHorSliderPrice"><span class="mobHorSliderRup">&#8377;</span> 36.22 Lac</div>
+						<div class="mobHorSliderName">Supertech The Romano</div>
+						<div class="mobHorSliderAddress">Sector 29, Noida</div>
+						<div class="spacer15"></div>
+						<div class="mobHorSliderType">3 BHK Builder Floor</div>
+						<div class="mobHorSliderSize">1256 - 1500 sq.ft.</div>
+						<div class="mobHorSliderStatus">Ready to Move</div>
+					</div>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".mobHorSliderMainContainer").each(function(e){
+			$(this).find(".mobHorSlider").css({'width':parseInt(($(this).find(".mobHorSliderBox").outerWidth() + 10) * $(this).find(".mobHorSliderBox").length) + 'px'});
+		})
+		$(window).scroll(function(){
+			$(".mobHorSlider").each(function(e){
+				if(($(window).scrollTop() + $(window).height()) > $(this).offset().top){
+					$(this).css({'margin-left':'0'});
+				}
+			});
+		})
+	});
+</script>
+</html>
