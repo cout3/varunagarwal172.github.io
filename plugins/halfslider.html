@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html>
+<title>Half Carousel-Varun</title>
+<head>
+<style>
+/*page css*/
+ *{box-sizing: border-box;font-family: "Open Sans";  -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+    body{margin:20px;}
+    /* to be copied*/
+    .mainHeading{font-size: 20px;color: #666; padding-bottom: 20px;line-height: 100%;}
+    /*.recommCard{float:left;padding:5px 10px}*/
+    .recommCard .viewArea{height:80px !important;background:#F4F5F9;}
+    .recommCard table {width: 100%;cursor:pointer;table-layout:fixed;border-collapse:collapse;}
+    .recommCard tr.heading{background-color: #f1f1f1;font-weight: 600;pointer-events: none;}    
+    .recommCard tr.heading td{font-size: 13px;padding-top: 0;}
+    
+    .recommCard table td{display:inline-block;position:relative;padding:6px;border-collapse:collapse;font-size:12px;color:#666;}
+    .recommCard table tr td:first-child{width:30%;}
+    .recommCard table tr td:nth-child(2){width:68%;}
+    .recommCard table tr{border-bottom:1px #f1f1f1 solid;}
+    /**/.recommCard table tr:hover{background-color: #f9f9f9;}
+    .recommCard table td > div:first-child{font-size: 13px;color:#39c;font-weight:600;}
+    .recommCard table td > div:nth-child(2){margin-top: 5px;}
+    .recommCard td.phaseHead span{color:#666;}
+    .recommCard td.phaseHead span:first-of-type{text-transform:uppercase;}
+    .recommCard a, a:link{color:#3C9CFC}
+    .recommCard .table_wrap{border: 1px #f1f1f1 solid;box-shadow: 0 2px 6px 1px rgba(121, 121, 121, 0.25);width: 100%; /*height: 244px;*/ position: relative;display: inline-block;border-width: 1px 1px 0 1px;}
+    .recommCard table td > div.bookPrice{color: #39c;font-size: 13px;}
+    .recommCard table td i{position: absolute;right: 0px;top: 0px;margin: auto;bottom: 0;width: 22px;height: 22px;background-size: 334px 334px;background-position: -279px -115px;}    
+    .elip{ overflow: hidden;width:100%;position:relative;white-space: nowrap;
+    text-overflow: ellipsis;}
+    .recommCard .heading td .tags{background-color: #00ceb5; color: #fff;position: absolute;padding: 5px;top: 0px;left: 0px;font-size: 10px;}
+    .spacer30{width: 100%;height: 30px;}
+
+    /* slider css*/
+.mainHeading{font-size: 20px;color: #666; padding-bottom: 20px;line-height: 100%;}
+    /* half slider new*/
+    .recommCard{float:left;padding:5px 10px}
+    .halfSliderCont{position: relative;/*left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);max-width: 1170px;*/width:100%; overflow: hidden;}
+    .halfSlider{width:100%;height:100%;overflow:hidden;position:relative;left:50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%)}
+    .slider__arrow{cursor:pointer;background: rgba(255,255,255,1);box-shadow: 0 0 5px 1px rgba(0,0,0,.1);border: 1px rgba(0,0,0,.1) solid;color:#fff;width:30px;height:20%;position:absolute;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);z-index:1;transition:all .2s ease-in-out;}
+    .slider__arrow i{opacity:0.5;background-repeat:no-repeat;background-position: -126px -96px;width:13px;height:24px;position:absolute;top:0;bottom:0;margin:auto;left:0;right:0;background-image:url(http://uimocks.infoedge.com/HalfCarousel/xid_sprite_full_v1.png);background-size: 334px 334px;}
+    .halfSliderCont:hover i{opacity: 1;}
+    .halfSliderCont:hover .parentOverlayArrw{opacity: 0.8;}
+    .parentOverlayArrw{width: 20%;background-color: #fff;opacity: 0;position: absolute;top: 0;height: 100%;}
+    .rightParent{right: 0;}
+    .leftParent{left:-1px;width:10%;display:none;}
+    .slider__left{left:-1px;display:none}
+    .slider__right{right:0}
+    .slider__right i{background-position:-149px -96px;}
+    .slider__container{position:absolute;top:0;left:0}
+    .slider__item:hover{background-color:#F7F7F7}
+    .dspBlock{display: block;margin-top:20px;}
+
+
+
+
+    .pdRCardImg{width: 100%; max-width:100px; height: 70px;position: relative;}
+    .pdRCardImg img {height: 100%;margin: auto;position: absolute;left: 0;right: 0;top: 0;max-width: 100%;object-fit: cover;bottom: 0;}
+    .pdRCardDesc {font-weight: 600;color: #333;width: 210px;}
+    .pdRCardAddress{line-height: 15px;margin: 2px 0 5px 0; font-weight: 600;color: #999;width: 100%;}
+    .pdRCardSpec {line-height: 15px; margin: 5px 0 8px 0; font-weight: 600;color: #999;width: 100%;}
+    .pdRCardSpec span:nth-child(2) {border-left: 1px solid #e1e8ec;padding: 0 5px;margin: 0 5px;}
+    .recommCard table td .arrowBox{float:right;display:inline-block;margin-right:10px;width: 25px;height: 25px;position: relative;background-color:#f9f9f9;box-shadow: 0 0 5px 1px rgba(0,0,0,.1);border: 1px rgba(0,0,0,.1) solid;cursor: pointer;}
+    .recommCard table td .arrowBox i{position:absolute;left:0;right:0;top:0;bottom:0;margin:auto;background-image:url(http://uimocks.infoedge.com/HalfCarousel/sprite.png);    background-position: -67px -40px;background-size:initial;height:16px;width:10px}
+    .recommCard table td .arrowBox.right_arrow i{background-position:-57px -40px}
+    .recommCard table td.td_arrow{width: 100%;padding: 6px 6px 10px;float:right;}
+    .recommCard table tr:hover{background-color: transparent;}
+</style>
+</head>
+<body style="margin:0 auto; max-width: 1170px;">
+ <div class="mainHeading">More New Booking Offers</div>  
+  <div class="halfSliderCont">
+    <div class="halfSlider">
+    <div class="slider__container"> 
+       <div class="recommCard">  
+       <div class="table_wrap">    
+        <table>
+        <tr class="heading">
+            <td colspan="2" style="width: 100%">
+            <div class="tags">CHEAPEST DEALS 1</div>
+            <div class="spacer30"></div>
+            Get a 2BHK apartment in sec-16,noida</td>
+        </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                     <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                   
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                    
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>            
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_arrow"> 
+                    <span class="arrowBox right_arrow"><i></i></span>
+                    <span class="arrowBox"><i></i></span>                    
+                </td>
+            </tr>
+        </table>
+        </div>
+
+</div> 
+       <div class="recommCard">  
+       <div class="table_wrap">    
+        <table>
+        <tr class="heading">
+            <td colspan="2" style="width: 100%">
+            <div class="tags">CHEAPEST DEALS 1</div>
+            <div class="spacer30"></div>
+            Get a 2BHK apartment in sec-16,noida</td>
+        </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                     <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                   
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                    
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>            
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_arrow"> 
+                    <span class="arrowBox right_arrow"><i></i></span>
+                    <span class="arrowBox"><i></i></span>                    
+                </td>
+            </tr>
+        </table>
+        </div>
+
+</div> 
+       <div class="recommCard">  
+       <div class="table_wrap">    
+        <table>
+        <tr class="heading">
+            <td colspan="2" style="width: 100%">
+            <div class="tags">CHEAPEST DEALS 1</div>
+            <div class="spacer30"></div>
+            Get a 2BHK apartment in sec-16,noida</td>
+        </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                     <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                   
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                    
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>            
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_arrow"> 
+                    <span class="arrowBox right_arrow"><i></i></span>
+                    <span class="arrowBox"><i></i></span>                    
+                </td>
+            </tr>
+        </table>
+        </div>
+
+</div>
+       <div class="recommCard">  
+       <div class="table_wrap">    
+        <table>
+        <tr class="heading">
+            <td colspan="2" style="width: 100%">
+            <div class="tags">CHEAPEST DEALS 1</div>
+            <div class="spacer30"></div>
+            Get a 2BHK apartment in sec-16,noida</td>
+        </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                     <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                   
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>                    
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div class="pdRCardImg">
+                    <img src="http://newprojects.99acres.com/projects/mahagun_builders/mahagun_mantra_2/images/mantra_med.jpg">
+                   </div>
+                </td>
+                <td>
+                     <div>
+                    <div class="pdRCardDesc f12 elip">3 BHK, Residential Apartment</div>
+                    <div class="pdRCardSpec f12">
+                        <span>1480 sqft</span>
+                        <span>Under Construction</span>
+                    </div>
+                    <div class="pdRCardAddress f10 elip">in Mahagun moderne, Sector 78</div>            
+                   
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="td_arrow"> 
+                    <span class="arrowBox right_arrow"><i></i></span>
+                    <span class="arrowBox"><i></i></span>                    
+                </td>
+            </tr>
+        </table>
+        </div>
+
+</div>
+</div>
+</div>
+ 
+   <div class="slider__arrow slider__left"><i></i></div>
+   <div class="parentOverlayArrw leftParent slider__left"></div>
+   <div class="slider__arrow slider__right"><i></i></div>
+   <div class="parentOverlayArrw rightParent"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+var halfslider = (function(){
+    $(".eoi_vspBtn,.back").on("click", function(){
+        $(this).closest(".flip-container").toggleClass('hover');
+    });
+    if($(".halfSlider").width()<=1024){
+        no_cards = 2;
+        width = parseInt($(".halfSliderCont").outerWidth()/2.5);
+    }
+    else{
+        no_cards = 3
+        width = parseInt($(".halfSliderCont").outerWidth()/3.5);
+    }
+    $(".recommCard").css({'width':width + 'px'});
+
+    var widthCard = $(".recommCard").outerWidth();
+    var HeightCard = $(".recommCard").outerHeight();
+    var count = $(".slider__container .recommCard").length;
+    var totalWidth = count * widthCard;
+    //var no_cards = 3;
+    var first_slide = (widthCard*(3/4))+widthCard;
+    var slide = widthCard*no_cards;
+    var clac_lastSlide = - (totalWidth - (first_slide+(widthCard*(no_cards+1))));
+    var selectSlide;
+    var flag = 1;
+   //var padding =9;
+    //var maxHeight = -1;
+
+// $('.table_wrap').each(function() {
+//       maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+//       maxHeight = $(".table_wrap").height();
+// });
+// $('.table_wrap').each(function() {
+//       $(this).height(maxHeight);
+// });
+
+    var totalcontWidth = (widthCard*no_cards)+(widthCard/2)
+    //$('.halfSliderCont').css('width',totalcontWidth+"px").css('height',HeightCard+"px");
+    $('.halfSliderCont').css({'height':HeightCard+"px"})
+    $('.parentOverlayArrw').css('width',(widthCard/2) + "px");
+    $(".slider__container").css("width",totalWidth);
+    $('.slider__arrow,.parentOverlayArrw').on('click', function(e) {
+        $('.slider__arrow,.parentOverlayArrw').css('pointer-events','none');
+        var isLeft = $(this).hasClass('slider__left');    
+        var slider_position = $(".slider__container").position();
+        if(flag == 1){
+            selectSlide = first_slide ;flag = 0;
+            $('.slider__left,.leftParent').show();
+            $('.parentOverlayArrw').css('width',(widthCard/4)+"px");
+        } 
+        else if (isLeft == true){
+            $('.slider__right,.rightParent').show();
+            if(Math.abs(slider_position.left) == first_slide){
+            flag = 1;
+            selectSlide = first_slide;
+            $('.slider__left,.leftParent').hide();
+        $('.parentOverlayArrw').css('width',(widthCard/2)+"px");}
+        } 
+        else{
+            selectSlide = slide;
+        }
+     $(".slider__container").animate({
+            left: (isLeft) ? "+="+selectSlide : "-="+selectSlide
+        }, 300,function(){
+            $('.slider__arrow,.parentOverlayArrw').css('pointer-events','auto');
+        }); 
+      var slider_position = $(".slider__container").position(); 
+         if (isLeft == false && slider_position.left <= clac_lastSlide) {
+           $('.slider__right,.rightParent').hide();
+        } 
+    })
+})();
+
+</script>
+</body>
+</html>
