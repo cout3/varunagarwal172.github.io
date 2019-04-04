@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Custom radio-Varun</title>
+	<style type="text/css">
+		.inputs-fields *{outline:none}
+		.inputs-fields input[type="radio"]{background-color:#fff;cursor:pointer;display:inline-block;height:16px;position:relative;width:16px;-webkit-appearance:none;border:1px solid #ccd1d9}
+		.inputs-fields input[type="radio"]{border-radius:50% !important}
+
+		.inputs-fields input[type="radio"]:after{content:'';border-style:solid;position:absolute;display:inline-block;color:#59cdb5;width:8px;height:8px;border-radius:50%!important;border:0;background:#f1f3f5;top:50%;left:50%;transform:translate(-50%,-50%)}
+
+		.inputs-fields input[type="radio"]:checked:after,.inputs-fields input[type="radio"]:hover:after{width:8px;height:8px;border-radius:50%!important;border:0;background:#59cdb5;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+		.inputs-fields span {
+			display: inline-block;
+		    margin: 2px 0 0 5px;
+		    vertical-align: top;		    
+		    color: #999;
+		}
+	</style>
+</head>
+<body>
+<div class="inputs-fields">
+	<label>
+		<input name="name" type="radio" checked="" value="Value 1">
+		<span>Option 1</span>
+	</label>
+	<label>
+		<input name="name" type="radio" value="Value 2">
+		<span>Option 2</span>
+	</label>
+</div>
+</body>
+</html>
