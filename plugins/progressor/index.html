@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Progress Bar-Varun</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<body>
+	<div class="maincontainer">
+		
+		<div class="pTimerBar" data-wrap="barTimer" data-for="barWrapper">
+			<div data-bar="progressiveBar">
+				<p data-cover="progresser"></p>
+			</div>
+			<p class="timerText">This session will expire in <span class="sb" data-timer="timer">02:00</span> minutes.</p>
+			<input type="button" class="startTimer" value="Click to Start"/>
+		</div>
+
+		<div class="playPauseBar" data-wrap="playPauseBar" data-for="barWrapper">
+			<div data-bar="progressiveBar">
+				<p data-cover="progresser"></p>
+				<p data-progress="progressPercent">0%</p>
+			</div>
+			<p class="timerText">Time remaining <span class="sb" data-timer="timer">02:00</span> minutes.</p>
+			<input type="button" class="play" value="Play"/>
+			<input type="button" class="pause disabled" value="Pause" disabled="disabled"/>
+			<input type="button" class="stop disabled" value="Reset" disabled="disabled"/>
+		</div>
+		
+		<div class="adjustingBar" data-wrap="playPauseBar" data-for="barWrapper">
+			<div data-bar="progressiveBar">
+				<p data-cover="progresser"></p>
+				<p data-progress="progressPercent">0%</p>
+			</div>
+			<input type="button" class="increaseBar" value="+ 25"/>
+			<input type="button" class="reduceBar" value="&ndash; 25"/>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>
