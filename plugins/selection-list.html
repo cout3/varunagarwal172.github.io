@@ -1,0 +1,259 @@
+<html>
+<head>
+	<title>Selection List-Varun</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			width: 50%;
+			margin: auto;
+		}
+		ul, li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.clearfix {
+			clear: both;
+		}
+		.list {
+			width:200px;
+			position: relative;
+			box-shadow: 0 0 5px rgba(0,0,0,0.5);
+		}
+		#list1 {
+			float: left;
+		}
+		#list2 {
+			float: right;
+		}
+		.list-select {
+			padding: 5px 20px 5px 5px;
+			position: relative;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.list-select:after {
+			content:"";
+			border: 5px solid;
+			border-color: #000 transparent transparent transparent;
+			position: absolute;
+			top:calc(50% + 2px);
+			right: 10px;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+		.list-content {
+			display: none;
+			border-top: 1px solid #ccc;
+		}
+		.list-option-wrapper {
+			margin-bottom: 10px;
+			max-height: 300px;
+			overflow: hidden;
+			overflow-y: auto;
+			padding-bottom: 5px;
+		}
+		.list-option {
+			line-height: 24px;
+			padding: 5px 20px 5px 5px;
+			cursor: pointer;
+			box-shadow: 0px 2px 6px -2px rgba(0,0,0,0.5);
+			transition: ease all .3s;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.list-option:hover, .hover {
+			background-color: #f3f3f3
+		}
+		.list-option.select {
+			background-color: #ccc;
+		}
+		.add-option-wrapper {
+			padding: 10px 5px;
+		}
+		input[type="text"] {
+			width: 50%;
+			float: left;
+			padding: 5px;
+		}
+		input[type="text"].error {
+			border-color: red;
+		}
+		button {
+			width: 45%;
+			float: right;
+			padding: 5px;
+			cursor: pointer;
+		}
+		.move-option-wrapper {
+		    background-color: #858f90;
+		    user-select: none;
+		    color: #fff;
+		    line-height: 30px;
+		    cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="list" id="list1">
+		<div class="list-select">Select</div>
+		<div class="list-content">
+			<ul class="list-option-wrapper">
+				<li class="list-option">List 1 Option 1</li>
+				<li class="list-option">List 1 Option 2</li>
+				<li class="list-option">List 1 Option 3</li>
+				<li class="list-option">List 1 Option 4</li>
+				<li class="list-option">List 1 Option 5</li>
+			</ul>
+			<div class="add-option-wrapper">
+				<input type="text" />
+				<button>Add Option</button>
+				<div class="clearfix"></div>
+			</div>
+			<div class="move-option-wrapper" data-to="list2">Move selected options to list 2</div>
+		</div>
+	</div>
+	<div class="list" id="list2">
+		<div class="list-select">Select</div>
+		<div class="list-content">
+			<ul class="list-option-wrapper">
+				<li class="list-option">List 2 Option 1</li>
+				<li class="list-option">List 2 Option 2</li>
+				<li class="list-option">List 2 Option 3</li>
+				<li class="list-option">List 2 Option 4</li>
+				<li class="list-option">List 2 Option 5</li>
+			</ul>
+			<div class="add-option-wrapper">
+				<input type="text" />
+				<button>Add Option</button>
+				<div class="clearfix"></div>
+			</div>
+			<div class="move-option-wrapper" data-to="list1">Move selected options to list 1</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function (e) {
+		var curList = "",
+			index = -1;
+
+		$(".list-select").on('click', function (e) {
+			var par = $(this).parents(".list");
+
+			selectedText = "";
+
+			par.find(".list-content").slideToggle();
+			curList = par.toggleClass("active").attr("id");
+
+			if($("#" + curList).hasClass("active")){
+				index = -1;
+				topDownselection(index);
+			}
+			e.stopPropagation();	
+		});
+
+		$("body").on("click", '.list-option', function (e) {
+			var ele = $(this),
+				par = $(this).parents(".list");
+
+			ele.toggleClass("select");
+
+			par.find(".list-option.select").each(function (e) {
+				selectedText += $.trim($(this).text()) + ", ";
+			});
+			if(selectedText == "") {
+				selectedText = "Select";
+			}
+
+			setText(par);
+			
+			e.stopPropagation();
+		});
+
+		$("button").on("click", function (e) {
+			var par = $(this).parents(".list"),
+				inp = par.find(".add-option-wrapper input")
+				addOptiontext = $.trim(inp.val());
+
+			if(addOptiontext!="") {
+				par.find(".list-option-wrapper").append("<li class='list-option'>" + addOptiontext + "</li>");
+				inp.removeClass("error");
+				inp.val("");
+			}
+			else {
+				inp.addClass("error");
+			}
+		});
+
+		$(".move-option-wrapper").on("click", function (e) {
+			var par = $(this).parents(".list"),
+				newElem = $("#" + $(this).attr("data-to")).find(".list-option-wrapper"),
+				cloneEle = par.find(".list-option.select").clone();
+
+			par.find(".list-option.select").detach();
+			cloneEle.removeClass("select").appendTo(newElem);
+
+			$(".list-select").text("Select");
+			e.stopPropagation();
+		});
+
+		$(document).on("click", function (e) {
+			$(document).unbind("keydown");
+				$(".list-content").slideUp();
+			// $(".list-option").removeClass("select");
+			// $(".list").removeClass("active");
+			// $(".add-option-wrapper input").val("");
+		});
+
+		function topDownselection(index) {
+			$(document).on("keydown", function(e) {
+				var list = $("#" + curList),
+					listOption = list.find(".list-option"),
+					selectFlag = false;
+					selectOption = function (index) {
+						if(selectFlag) {
+							listOption.eq(index).toggleClass("select");
+							setText(list);
+						}
+						else {
+							listOption.removeClass("hover");
+							listOption.eq(index).addClass("hover");
+						}
+					};
+
+				if(e.keyCode == 38 && index>0) {
+					index--;
+				}
+				else if(e.keyCode == 40 && (index<listOption.length - 1)) {
+					index++;
+				}
+				else if(e.keyCode == 32) {
+					selectFlag = true;
+				}
+				else {
+					return false;
+				}
+				selectOption(index);
+			});
+		}
+
+		function setText(par) {
+			var selectedText = "";
+			par.find(".list-option.select").each(function (e) {
+				selectedText += $.trim($(this).text()) + ", ";
+			});
+			if(selectedText == "") {
+				selectedText = "Select";
+			}
+			par.find(".list-select").text(selectedText).attr("title",selectedText);
+		}
+	});
+
+</script>
+</html>

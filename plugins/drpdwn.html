@@ -1,0 +1,191 @@
+<html>
+<head>
+	<title>Custom DropDown-Varun</title>
+	<style type="text/css">
+	body *{box-sizing: border-box}
+	/*common css for check boxes*/
+		.inputs-fields *{outline:none; box-sizing: border-box;}
+		.inputs-fields input[type="checkbox"]{background-color:#fff;cursor:pointer;float:left;height:16px;position:relative;width:16px;-webkit-appearance:none;-moz-appearance:none;border:1px solid #ccd1d9; margin: 0;}
+		.inputs-fields input[type="checkbox"]+em,.inputs-fields input[type="checkbox"]:hover+em{height:8px;width:8px;position:absolute;background:#f1f3f5; left: 50%;top: 50%;-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+		.inputs-fields input[type="checkbox"]:hover+em{background-color:#59cdb5 }
+		.inputs-fields input[type="checkbox"]:checked+em{border-style:solid;position:absolute;left:1px;top:3px;display:inline-block;-webkit-transform:rotate(135deg);-moz-transform:rotate(135deg);-o-transform:rotate(135deg);transform:rotate(135deg);width:14px;height:7px;color:#59cdb5;border-width:2px 2px 0 0;background:transparent}
+		.inputs-fields .inputs-fields-txt {display: inline-block;line-height: 22px;margin: 0 0 0 2px; vertical-align: top;color: #666; font-size: 14px}
+		.inputs-fields .inputs-fields-chk{position: relative; display: inline-block;}
+		.inputs-fields label{cursor: pointer;display: inline-block;margin-right: 8px;}
+		/*css for drpdwns*/
+		[data-type="chkBoxDrpDwn"] .inputs-fields input[type="checkbox"]:checked+em{width: 14px;top: 7px;}
+		[data-type="chkBoxDrpDwn"]{position:relative;background:#fff}
+		[data-type="chkBoxDrpDwn"] [data-value="selectedVal"]{display:block;padding:0 20px 0 5px;line-height:20px;border:1px solid #999;background-color:transparent;z-index:2;position:relative;width:100%;overflow: hidden; white-space: nowrap;text-overflow:ellipsis;}
+		[data-type="chkBoxDrpDwn"] [data-value="selectedVal"]:after{top:40%;right:5px;border:solid transparent;content:" ";position:absolute;border-top-color:#666;border-width:5px;z-index:1}
+		[data-type="chkBoxDrpDwn"] [data-type="optionsWrp"]{display:none;background:#fff;border:1px solid #999;border-top:0;position:absolute;left:0;width:100%}
+		[data-type="chkBoxDrpDwn"] [data-type="optionsWrp"] label{display:block;border-bottom:1px solid #999;margin:0;padding:2px 0}
+		[data-type="chkBoxDrpDwn"] [data-type="optionsWrp"] label:last-child{border-bottom:0}
+
+	</style>
+
+</head>
+<body >
+	<div class="reraSubuser" data-type="chkBoxDrpDwn" data-pattern="" data-term="" style="width:200px; float: left;">
+		<span data-value="selectedVal" data-def = "Select the option">Select the option</span>
+		<input type="hidden" value="-1"/>
+		<div data-type="optionsWrp" class="inputs-fields">
+			<label data-for="selectall">
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Select All</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="0" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 1</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="1" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 2</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="2" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 3</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="3" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 4</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="4" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 5</span>
+			</label>
+	    </div>
+	</div>
+	<div class="reraSubuser" data-type="chkBoxDrpDwn" data-pattern="" data-term="" style="width:200px; float: right;">
+		<span data-value="selectedVal" data-def = "Select the option">Select the option</span>
+		<input type="hidden" value="-1"/>
+		<div data-type="optionsWrp" class="inputs-fields">
+			<label data-for="selectall">
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Select All</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="0" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 1</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="1" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 2</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="2" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 3</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="3" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 4</span>
+			</label>
+			<label>
+				<span class="inputs-fields-chk">
+					<input type="checkbox" value="4" >
+					<em></em>
+				</span>
+				<span class="inputs-fields-txt">Subuser 5</span>
+			</label>
+	    </div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	var drpdwn = (function(){
+		flag_call = 0;
+		$(window).on("click",function(e){
+			$('[data-type="optionsWrp"]').hide();
+		})
+		$('[data-type="chkBoxDrpDwn"]').on("click",function(e){
+			$('[data-type="optionsWrp"]').hide();
+			$(this).find('[data-type="optionsWrp"]').toggle();
+			e.stopPropagation();
+		});
+		$('[data-type="optionsWrp"] label').on("click",function(e){
+			par = $(this).parents('[data-type="chkBoxDrpDwn"]');
+			wrp = $(this).parents('[data-type="optionsWrp"]');
+			defText =par.find('[data-value="selectedVal"]').attr('data-def');
+			slctbox = wrp.find('[data-for="selectall"] input[type="checkbox"]');
+			flag_call = 1;
+			flag_chkall = 0;
+			if($(this).attr("data-for") == "selectall"){
+				if($(this).find('input[type="checkbox"]').is(":checked"))
+					wrp.find('input[type="checkbox"]').prop("checked","true");
+				else
+					wrp.find('input[type="checkbox"]').removeAttr("checked");
+			}
+			else{
+				val.chk();
+				if(flag_chkall == 1)
+					slctbox.removeAttr("checked");
+				else{
+					slctbox.prop("checked","true");
+				}
+			}
+			val.eval();
+			e.stopPropagation();
+		});
+		var val = {
+			chk:function(){
+				slctval = "";
+				slcttext = "";
+				if(flag_call == 1){
+					wrp.find('label input[type="checkbox"]:not(label[data-for="selectall"] input[type="checkbox"])').each(function(e){
+						if(!($(this).is(":checked")))
+							flag_chkall=1;
+						else{
+							slctval+=$(this).val() + ",";
+							slcttext+=$(this).parents('.inputs-fields-chk').siblings('.inputs-fields-txt').text() + ',';
+						}
+					});
+				}
+			},
+			eval: function(){		
+				if(flag_call == 1){		
+					val.chk();
+					slctval = slctval.substring(0,slctval.length-1);
+					(slcttext != "")?(slcttext=slcttext.substring(0,slcttext.length-1)):(slcttext = defText);
+					par.find('input[type="hidden"]').val(slctval);
+					par.find('input[type="hidden"]').attr('data-text',slcttext);
+					par.find('[data-value="selectedVal"]').text(slcttext).attr('title',slcttext);
+				}			
+			}
+		}
+		val.eval(); //self envke
+		return val;
+	})();
+</script>
+</html>
