@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Range Slider-Varun</title>
+	<style type="text/css">
+		.rangeSliderWrap {
+    width: 200px;
+    position: relative;
+    height: 30px;
+}
+.rangeSliderStrip {
+    background-color: #ccc;
+    height: 10px;
+    border-radius: 3px;
+    width:100%;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+.rangeSliderMin,.rangeSliderMax {
+    width: 10px;
+    height: 30px;
+    background: #666;
+    border-radius: 3px;
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+    
+}
+.rangeSliderMin,.rangeSliderMinValue{left: 0;}
+.rangeSliderMax,.rangeSliderMaxValue{right:0; background-color: red}
+.rangeSliderMinValue,.rangeSliderMaxValue {
+    position: absolute;
+    bottom: -30px;
+}
+
+	</style>
+
+</head>
+<body>
+	<div class="rangeSliderWrap" data-min="0" data-max="100" data-step="1">
+		<div class="rangeSliderStrip"></div>
+		<div class="rangeSliderMin"></div>
+		<div class="rangeSliderMax"></div>
+		<div class="rangeSliderMinValue"></div>
+		<div class="rangeSliderMaxValue"></div>
+	</div>
+	<br /><br /><br />
+	<div class="rangeSliderWrap" data-min="0" data-max="100" data-step="5">
+		<div class="rangeSliderStrip"></div>
+		<div class="rangeSliderMin"></div>
+		<div class="rangeSliderMax"></div>
+		<div class="rangeSliderMinValue"></div>
+		<div class="rangeSliderMaxValue"></div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	$(document).ready(function(a) {
+    rangeSlider()
+});
+var rangeSlider = function(a) {
+    var rangeVariable = {
+        min: 0,
+        max: 0,
+        step: 0
+    };
+    $(".rangeSliderWrap").each(function(a) {
+        rangeVariable.min = parseInt($(this).attr("data-min")), rangeVariable.max = parseInt($(this).attr("data-max")), $(this).find(".rangeSliderMinValue").text(rangeVariable.min), $(this).find(".rangeSliderMaxValue").text(rangeVariable.max)
+    }), $(".rangeSliderMin,.rangeSliderMax").on("mousedown", function(a) {
+        rangeVariable.step = parseInt($(this).parents(".rangeSliderWrap").attr("data-step")), $(".rangeSliderMin,.rangeSliderMax").removeClass("draggable");
+        var c = $(this),
+            d = {
+                left: c.parents(".rangeSliderWrap").offset().left,
+                top: c.parents(".rangeSliderWrap").offset().top,
+                width: c.parents(".rangeSliderWrap").outerWidth(),
+                height: c.parents(".rangeSliderWrap").outerHeight()
+            };
+        $(this).offset().left;
+        $(this).addClass("draggable").parents(".rangeSliderWrap").on("mousemove", function(a) {
+            var e = {
+                    max: c.parents(".rangeSliderWrap").find(".rangeSliderMax").offset().left,
+                    min: c.parents(".rangeSliderWrap").find(".rangeSliderMin").offset().left,
+                    widthMin: c.parents(".rangeSliderWrap").find(".rangeSliderMin").outerWidth(),
+                    heightMin: c.parents(".rangeSliderWrap").find(".rangeSliderMin").outerHeight(),
+                    widthMax: c.parents(".rangeSliderWrap").find(".rangeSliderMax").outerWidth(),
+                    heightMax: c.parents(".rangeSliderWrap").find(".rangeSliderMax").outerHeight()
+                },
+                f = {
+                    max: e.max - $(".rangeSliderMax").outerWidth(),
+                    min: e.min + $(".rangeSliderMin").outerWidth()
+                },
+                g = Math.min(a.pageX, d.width);
+            g < d.left && (g = 0), c.hasClass("rangeSliderMin") ? g >= f.max && (g = f.max) : g <= f.min && (g = f.min), $(".draggable").offset({
+                left: g
+            }).on("mouseup", function() {
+                $(this).removeClass("draggable")
+            });
+            var h = parseInt(100 * g / d.width);
+            if (c.hasClass("draggable") && h % rangeVariable.step == 0) {
+                var i = parseInt(h * parseInt(rangeVariable.max / 100));
+                c.hasClass("rangeSliderMin") ? $(this).find(".rangeSliderMinValue").text(i) : $(this).find(".rangeSliderMaxValue").text(i)
+            }
+        }), a.preventDefault()
+    }).on("mouseup", function() {
+        $(this).removeClass("draggable")
+    }), $(window).on("mouseup", function(a) {
+        $(".rangeSliderMin,.rangeSliderMax").removeClass("draggable")
+    })
+};
+</script>
+</html>
