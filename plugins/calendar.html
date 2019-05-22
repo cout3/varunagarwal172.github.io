@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<style type="text/css">
+			*{box-sizing: border-box;}
+			#calendar {width: 350px; border: 1px solid #000;display: none; position: fixed;top:50%;left: 50%; transform: translate(-50%, -50%);}
+			#calendar:after{content: "";display: block;clear:both;}
+			#calendar.open {display: block;}
+			.header {position: relative; height: 60px;}
+			.prev, .next, .my {position: absolute;top: 50%; transform: translateY(-50%);}
+			.prev, .next {cursor: pointer; color: red;}
+			.prev {left: 5px;}
+			.next {right: 5px;}
+			.my {left: 50%; transform: translate(-50%, -50%);}
+			#calendar .calBody .days { width: calc(100% / 7); height: 50px; line-height: 50px; float: left; text-align: center; cursor: pointer;  }
+			#calendar .calBody .days.head {background-color: blue; color: #fff; font-weight: 600; pointer-events: none;}
+			#calendar .calBody .days:hover {background-color: #ccc; color: red;}
+			#calendar .calBody .days.selected {background-color: red; color: #fff; pointer-events: none;}
+			#openCalendar {cursor: pointer;background-color: #f4f4f4;padding: 5px;}
+		</style>
+	</head>
+	<body>
+		<span id="openCalendar">Show Cal</span>
+		<span id="selectedDate">dd/mm/yyyy</span>
+		<div id="calendar">
+			<div class="header">
+				<div class="prev">Prev</div>
+				<div class="next">Next</div>
+				<div class="my">
+					<div class="month"></div>
+					<input type="number" maxlength="4" class="year" />
+				</div>
+			</div>
+			<div class="calBody">
+				<div class="days head">Sun</div>
+				<div class="days head">Mon</div>
+				<div class="days head">Tue</div>
+				<div class="days head">Wed</div>
+				<div class="days head">Thu</div>
+				<div class="days head">Fri</div>
+				<div class="days head">Sat</div>
+				<div class="calDays"></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let container = document.getElementById("calendar"),
+			date = new Date(),
+			currentMonth = date.getMonth(),
+			currentYear = date.getFullYear(),
+			days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+			months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+			selectedDate = {day: -1, month: -1, year: -1},
+			flag = true;
+
+		function renderCalendar(year, month) {
+			if(year < 1) 
+				year = date.getFullYear();
+
+			let startDay = new Date(year, month).getDay(),
+				numOfDays = 32 - new Date(year, month, 32).getDate();
+
+
+			let m = container.getElementsByClassName("month")[0],
+				y = container.getElementsByClassName("year")[0],
+				b = container.getElementsByClassName("calDays")[0];
+
+			m.textContent = months[month];
+			y.value = year;
+			b.textContent = "";
+
+			for(let i = 1; i<=startDay; i++) {
+				let dayContainer = document.createElement("div");
+				dayContainer.classList.add("days");
+				dayContainer.textContent = "";
+				b.append(dayContainer);
+			}
+
+			for(let i = 1; i<=numOfDays; i++) {
+				let dayContainer = document.createElement("div");
+				dayContainer.classList.add("days");
+				dayContainer.textContent = i;
+				b.append(dayContainer);
+
+				if(i == new Date().getDate() && month == new Date().getMonth() && year == new Date().getFullYear() && flag) {
+					dayContainer.classList.add("selected");
+					flag = false;
+				}
+				else if(i == selectedDate.day && month == selectedDate.month && year == selectedDate.year) {
+					dayContainer.classList.add("selected");
+				}
+				dayContainer.addEventListener("click", function() {
+					selectDate(this);
+				});
+			}
+		}
+
+		function selectDate(e) {
+			let selectDate = document.getElementById("selectedDate"),
+				date = e.textContent + "/" + months[currentMonth] + "/" + currentYear,
+				selectedEle = document.getElementsByClassName("selected")[0];
+
+				if(selectedEle) {
+					selectedEle.classList.remove("selected");
+				}
+				e.classList.add("selected");
+
+			selectDate.textContent = date;
+
+			selectedDate.day = parseInt(e.textContent);
+			selectedDate.month = currentMonth;
+			selectedDate.year = currentYear;
+		}
+
+		renderCalendar(currentYear, currentMonth);
+
+		
+		var renCal = document.getElementById("openCalendar"),
+			prevMonth = container.getElementsByClassName("prev")[0],
+			nextMonth = container.getElementsByClassName("next")[0],
+			goToYear = container.getElementsByClassName("year")[0];
+
+		renCal.addEventListener("click", function() {
+			container.classList.toggle("open");
+		});
+
+		prevMonth.addEventListener("click", function() {
+			if(currentMonth) {
+				--currentMonth;
+			}
+			else {
+				currentMonth = 11;
+				--currentYear;
+			}
+			renderCalendar(currentYear, currentMonth);
+		});
+
+		nextMonth.addEventListener("click", function() {
+			if(currentMonth < 11) {
+				++currentMonth;
+			}
+			else {
+				currentMonth = 0;
+				++currentYear;
+			}
+			renderCalendar(currentYear, currentMonth);
+		});
+
+		goToYear.addEventListener("blur", function () {
+			if (this.value>0 && this.value <= 9999 && this.value != "") {
+				currentYear = this.value;
+			} else {
+					alert("Enter Valid year");
+			} 
+			renderCalendar(currentYear, currentMonth);
+			
+		});
+
+	</script>
+</html>
