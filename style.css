@@ -132,6 +132,33 @@ body {
 .plugins:nth-child(27) {
   background-color: #e8b527;
 }
+.plugins:nth-child(28) {
+  background-color: #33ffff;
+}
+.plugins:nth-child(29) {
+  background-color: #527e8b;
+}
+.plugins:nth-child(30) {
+  background-color: #ff33ff;
+}
+.plugins:nth-child(31) {
+  background-color: #81c5a3;
+}
+.plugins:nth-child(32) {
+  background-color: #b3fbf3;
+}
+.plugins:nth-child(33) {
+  background-color: #513c8c;
+}
+.plugins:nth-child(34) {
+  background-color: #17ff41;
+}
+.plugins:nth-child(35) {
+  background-color: #3fc34e;
+}
+.plugins:nth-child(36) {
+  background-color: #99ff33;
+}
 .plugins span {
   position: relative;
   z-index: 1;
@@ -148,7 +175,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  opacity: .3;
+  opacity: 0.3;
   z-index: 0;
 }
 .pluginName {
