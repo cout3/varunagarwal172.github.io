@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		*{box-sizing: border-box;}
+		body {margin: 0;}
+		ul, li {margin: 0; padding: 0; list-style: none;}
+
+		#whatsApp{width:300px;height:100vh; max-height:800px;position:fixed;top:0;left:0;right:0;bottom:0;margin:auto;border:1px solid #000;box-shadow:0px 0px 10px rgba(0, 0, 0, .5);background-color:#f3f3f3;}
+
+		#whatsApp .options, #whatsApp .back-to-fs{width:20px;height:20px;display:flex;color:#fff;font-weight:700;font-size:20px;justify-content:center;align-items:center;cursor:pointer}
+
+		#whatsApp .profile-pic{background-color:#fff;height:40px;width:40px;display:flex;justify-content:center;align-items:center;border-radius:50%;cursor:pointer; color: #000;}
+
+		#whatsApp .main-header .header-top, 
+		#whatsApp .main-header .header-tabs, 
+		#whatsApp .message-screen .header {display:flex;background-color:#009688;height:40px;width:100%;align-items:center;justify-content:left; color: #fff;padding: 0 10px;}
+
+		#whatsApp .button{border:0;outline:0;width:30px;line-height:30px;height:30px;border-radius:50%;padding:0;background-color:#009688;position:relative;cursor:pointer;transform:scale(1,1);transition:ease all .2s}
+
+		#whatsApp .front-screen, 
+		#whatsApp .message-screen {width: 100%; height: 100%;}
+
+		#whatsApp .front-screen .main-header .header-top #main-heading {width: calc(100% - 60px);font-size: 16px;font-weight: 600;}
+		#whatsApp .front-screen .main-header .header-tabs ul{ display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
+		#whatsApp .front-screen .main-header .header-tabs ul li{ width: 33.33%; height: 100%; display: flex; align-items: center;justify-content: center;}
+		#whatsApp .front-screen .main-header .header-tabs ul li.active {border-bottom: 3px solid #fff;}
+		#whatsApp .front-screen .messangers-list{height: calc(100% - 80px); overflow: hidden; overflow-y: overlay;}
+
+		#whatsApp .front-screen .messangers-list ul li{display:flex;height:60px;border-bottom:1px solid #ccc;width:100%;justify-content:center;align-items:center; padding: 0 10px;}
+		#whatsApp .front-screen .messangers-list ul li:last-child{border-bottom: 0}
+		#whatsApp .front-screen .messangers-list ul li .profile-pic {background-color:#009688; color:#fff;}
+		#whatsApp .front-screen .messangers-list ul li .messanger-name{padding:0 10px;width:calc(100% - 80px);color:#000;line-height:20px;cursor:pointer}
+		#whatsApp .front-screen .messangers-list ul li .time-info {color: #333; font-size: 10px; text-align: right; width: 40px;}
+		#whatsApp .front-screen .messangers-list ul li .time-info.new-info {color: #09d261;}
+		#whatsApp .front-screen .messangers-list ul li .time-info .new-messages-no{background-color:#09d261;color:#fff;font-weight:600;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;float:right;margin-top: 5px;}
+
+		
+		#whatsApp .message-screen {display: none;}
+		
+	
+		#whatsApp .message-screen .senderName{padding:0 10px;width:calc(100% - 40px);text-align:center;color:#fff;font-weight:600;font-family:sans-serif;line-height:20px;cursor:pointer}
+		#whatsApp .message-screen  .header .profile-pic {height: 30px; width: 30px;}
+		#whatsApp .message-screen #messages{height:calc(100% - 80px);padding:10px;overflow:hidden;overflow-y:auto;background-color:transparent}
+		#whatsApp .message-screen #messages ul li {display: block;margin-top: 5px;}
+		#whatsApp .message-screen #messages ul li span{background-color: #fff; max-width: 80%;padding: 5px; box-shadow: 0 0 2px rgba(0,0,0,.6); color: #000; font-size: 12px; border-radius: 3px; display: inline-block;}
+		#whatsApp .message-screen #messages ul li.sent {text-align: right;}
+		#whatsApp .message-screen #messages ul li.recieved {text-align: left;}
+		#whatsApp .message-screen #footer{height:40px;display:flex;justify-content:left;align-items:flex-end;background-color:transparent;padding:5px 0}
+		#whatsApp .message-screen #message{border:0;outline:0;width:calc(100% - 60px);line-height:30px;margin:0 10px;border-radius:25px;padding:0 10px}
+		#whatsApp .message-screen #sendMessage{border:0;outline:0;width:30px;line-height:30px;height:30px;border-radius:50%;padding:0;background-color:#009688;position:relative;cursor:pointer;transform:scale(1,1);transition:ease all .2s}
+		#whatsApp .message-screen #sendMessage:before{content:"";display:block;position:absolute;height:10px;width:10px;border-right:2px solid #fff;border-top:2px solid #fff;top:50%;left:40%;transform:translate(-50%,-50%) rotate(45deg)}
+		#whatsApp .message-screen #sendMessage:hover{transform:scale(1.2,1.2)}
+
+
+	</style>
+</head>
+<body>
+	<div id="whatsApp">
+		<div class="front-screen">
+			<div class="main-header">
+				<div class="header-top">
+					<span id="main-heading">Whatsapp</span>
+					<span class="button searchIcon">S</span>
+					<span class="options">:</span>
+				</div>
+				<div class="header-tabs">
+					<ul>
+						<li class="active">Chats</li>
+						<li>Status</li>
+						<li>Call</li>
+					</ul>
+				</div>
+			</div>
+			<div class="messangers-list">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="message-screen">
+			<div class="header">
+				
+			</div>
+			<div id="messages">
+				<ul>
+				</ul>
+			</div>
+			<div id="footer">
+				<input type="text" id="message">
+				<button id="sendMessage"></button>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript">
+	var mainWrapper = document.getElementById("whatsApp"),
+		frontScreen = mainWrapper.getElementsByClassName("front-screen")[0],
+		messageScreen = mainWrapper.getElementsByClassName("message-screen")[0],
+		currentUser = "";
+
+		function getData(url, callback) {
+			var xhr = new XMLHttpRequest();
+
+			xhr.open("POST", url, true);
+			xhr.responseType = "json";
+
+			xhr.onload = function () {
+				var status = xhr.status;
+
+				if(status == 200) {
+					callback(status, xhr.response);
+				}
+				else {
+					callback(status);
+				}
+			}
+			xhr.send();
+		}
+
+		var getInitList = function (userName = "user1") {
+			currentUser = userName;
+			getData('data/chat_messages.json', function (status, data) {
+				var listHtml = "";
+				if(status == 200) {
+					var list = data[currentUser];
+						
+						if(list) {
+							list["messangers"].forEach(index => {
+								listHtml += '<li data-for = ' + index.name + '>' + 
+										'<div class="profile-pic">'+ index.name.split("")[0] +'</div>' + 
+										'<div class="messanger-name">' + index.name + '</div>';
+
+								if(index["new-meesages"] > 0) {
+									listHtml += '<div class="time-info new-info">' + 
+													'<div class="last-msg-time">' + index["last-message-time"] + '</div>' + 
+													'<div class="new-messages-no">' + index["new-meesages"] + '</div>';
+								} 
+								else {
+									listHtml += '<div class="time-info">' + 
+													'<div class="last-msg-time">' + index["last-message-time"] + '</div>';
+								}
+											
+								listHtml +=	'</div>' + 
+										'</li>';
+							});
+						}
+						else {
+							listHtml = "<li>No list to display</li>";
+						}
+				}
+				else {
+					listHtml = "<li>Oops... Something went wrong. Please try again.</li>";
+				}
+				frontScreen.querySelectorAll(".messangers-list ul")[0].innerHTML = listHtml;
+				bindEventToList();
+			});
+		}
+
+		getInitList();
+
+		function bindEventToList() {
+			var messanger = frontScreen.querySelectorAll(".messangers-list ul li");
+			for(let i=0; i<messanger.length; i++) {
+				messanger[i].addEventListener("click", function () {
+					getMessages(this.getAttribute('data-for'));
+				});
+			}
+		}
+
+		function getMessages(messanger) {
+			getData('data/chat_messages.json', function (status, data) {
+				var list = data[currentUser]["messangers"];
+				list.forEach(index => {
+					if(index.name == messanger) {
+						var listHtml = "",
+							headerHtml = '<span class="back-to-fs">&lt;</span>' +
+										 '<span class="profile-pic">' + index.name.split("")[0]+ '</span>' + 
+										 '<span class="senderName">' + index.name + '</span>' + 
+										 '<span class="options">:</span>';
+
+						messageScreen.getElementsByClassName("header")[0].innerHTML = headerHtml;
+
+						index.messages.forEach(index => {
+							if(index[0] == "sent") {
+								listHtml +=  '<li class="sent"><span>' + index[1] + '</span></li>';
+							}
+							else {
+								listHtml +=  '<li class="recieved"><span>' + index[1] + '</span></li>';
+							}
+						});
+
+						messageScreen.querySelectorAll("#messages ul")[0].innerHTML = listHtml;
+						
+						frontScreen.style.display = 'none';
+						messageScreen.style.display = 'block';
+						
+						messageScreen.getElementsByClassName("back-to-fs")[0].addEventListener("click", function () {
+							frontScreen.style.display = 'block';
+							messageScreen.style.display = 'none';
+						});
+					}
+				})
+			});
+		}
+
+
+</script>
+</html>

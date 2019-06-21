@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TIC TAC TOE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <style type="text/css">*{box-sizing:border-box}
+	 body{margin:0 auto;font-family:monospace;}
+	 .show{opacity:1!important;transform:scale(1,1)!important;}
+	.pull-left{float:left;}
+	.pull-right{float:right;}
+	.transform-center{top:50%;left:50%;transform:translate(-50%, -50%);}
+	.no-pointer-event{pointer-events:none;}
+	.win-com{box-shadow:0 0 0px #FFF, 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #FF2D95, 0 0 2px #FF2D95, 0 0 5px #FF2D95, 0 0 10px #FF2D95, 0 0 15px #FF2D95, 2px 2px 2px #FF2D95 !important;animation:bell 2s ease;}
+	@keyframes bell{0%{transform:scale(1.2, 1.2);font-size:40px}
+	 20%{transform:scale(1, 1);font-size:32px}
+	 40%{transform:scale(1.2, 1.2);font-size:40px}
+	 60%{transform:scale(1, 1);font-size:32px}
+	 80%{transform:scale(1.2, 1.2);font-size:40px}
+	 100%{transform:scale(1, 1);font-size:32px}
+	}
+	#main-container{position: relative; max-width: 500px; max-height: 800px; margin: auto;width:100vw;height:100vh;background:url("images/bg.jpg");background-size:cover;}
+	#front-screen, #game-screen{width:100%;height:100%;min-height:550px;min-width:320px;text-align:center;padding:20px 15px;transform:scale(0,0);opacity:0;transition:ease opacity .3s;position:absolute;max-height: 800px; max-width: 500px;}
+	 .glowing-text{text-shadow:0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FF2D95, 0 0 30px #FF2D95, 0 0 40px #FF2D95, 0 0 55px #FF2D95, 0 0 75px #FF2D95, 2px 2px 2px #FF2D95;color:#352265;font-size:40px;font-family:fantasy;}
+	 #name{margin-bottom:25px;}
+	 #logo{height:200px;width:200px;border-radius:15px;}
+	.settings-wrapper{margin-top:25px;text-shadow:0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #1a1a86, 0 0 30px #FF2D95, 0 0 40px #1a1a86, 0 0 55px #1a1a86, 0 0 75px #FF2D95, 2px 2px 2px #FF2D95;color:#1a1a86;}
+	.button{box-shadow:0px 0px 5px #fff, inset 0px 0px 20px #FF2D95;margin-bottom:15px;padding:8px;font-size:32px;letter-spacing:1px;}
+	.tic-tac-toe{width:calc(100% - 30px);height:calc(100vw - 30px);max-height: 500px; font-size:52px;color:#fff;box-shadow:0 0 0px #FFF, 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #FF2D95, 0 0 2px #FF2D95, 0 0 5px #FF2D95, 0 0 10px #FF2D95, 0 0 15px #FF2D95, 2px 2px 2px #FF2D95;position:fixed;text-shadow:0 0 2px #FF2D95, 0 0 3px #FF2D95, 0 0 5px #FF2D95, 0 0 15px #FF2D95, 0 0 20px #1a1a86;}
+	.tic-tac-toe.medium{font-size: 40px;}
+	.tic-tac-toe.difficult{font-size: 32px;}
+	.tic-col{float:left;box-shadow:0 0 1px #FFF, 0 0 5px rgba(255, 45, 149, 1);width:33.33%;height:33.33%;display:flex;align-items:center;justify-content:center; font-family: cursive;}
+	#gameaction{margin:25px 0;position:absolute;bottom:0;width:calc(100% - 30px);}
+	#gameaction > div{box-shadow:0 0 0px #FFF, 0 0 5px #FFF, 0 0 10px #FFF, 0 0 20px #FF2D95, 0 0 2px #FF2D95, 0 0 5px #FF2D95, 0 0 10px #FF2D95, 0 0 15px #FF2D95, 2px 2px 2px #FF2D95;text-shadow:0 0 2px #FF2D95, 0 0 55px #FF2D95, 2px 2px 2px #FF2D95;margin-top:25px;font-size:20px;width:40%;color:#fff;padding:5px;letter-spacing:1px;background-color:rgba(0, 0, 0, .7);}
+	#turn{font-family:fantasy;text-align:left;margin-bottom:25px;}
+	#result{font-size:60px;line-height:72px;font-family:cursive;color:#fff;position:fixed;height:calc(100vw - 30px);width:calc(100% - 30px);max-height: 500px;background:url(images/bg.jpg);background-size: cover;display:flex;align-items:center;justify-content:center;text-shadow:0 0 2px #FF2D95, 0 0 55px #FF2D95, 2px 2px 2px #FF2D95;transform:translate(-50%, -50%) scale(0,0);transition:ease transform .3s;}
+	#result.scale{transform:translate(-50%, -50%) scale(1,1);}
+	.text-content{font-size:30px;color:#fff;text-shadow:0 0 2px #FF2D95, 0 0 55px #FF2D95, 2px 2px 2px #FF2D95;margin:10px 0 20px 0;font-family:fantasy;}
+	#audio-container {opacity: 0; transform: scale(0,0);, position: absolute; z-index: -1;}
+    </style>
+<body>
+	<div id="main-container">
+		<div id="front-screen" class="show">
+			<div id="name" class="glowing-text">TIC TAC TOE</div>
+			<img id="logo" src="images/pic10.png" />
+			<div id="level" class="settings-wrapper">
+				<div id="easy" class="button" onclick="initGrid(3, 'easy', event)">Easy</div>
+				<div id="medium" class="button" onclick="initGrid(5, 'medium', event)">Medium</div>
+				<div id="difficult" class="button" onclick="initGrid(7, 'difficult', event)">Difficult</div>
+			</div>
+		</div>
+		<div id="game-screen">
+			<div id="turn" class="glowing-text">Turn: Player X</div>
+			<div class="tic-tac-toe transform-center"></div>
+			<div id="gameaction">
+				<div id="newGame" class="pull-left" onclick="winObj.resetGame()">New Game</div>
+				<div id="Exit" class="pull-right" onclick="exitGame();">Exit</div>
+			</div>
+			<div id="result" class="transform-center"></div>
+		</div>
+		<div id="audio-container">
+			<audio loop id="sound">
+			  	<source src="voice/selectplayers.mp3" type="audio/mpeg">
+			</audio>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	
+
+
+	function initAudio() {
+		this.soundEle = document.getElementById("sound"),
+		this.sound = {
+			"playing" : "voice/playinggame.mp3",
+			"winBg" : "voice/win_bg.mp3",
+			"p1Won" : "voice/p1won.mp3",
+			"p2Won" : "voice/p2won.mp3",
+			"gameOver" : "voice/gameover.mp3"
+
+		} 
+
+		this.playSound = function (sound) {
+			this.soundEle.src = sound;
+			this.soundEle.play();
+		}
+
+		this.stopSound = function () {
+			this.soundEle.stop();
+		}
+	}
+	var fs = document.getElementById("front-screen"),
+		gameWrapper = document.getElementById("game-screen"),
+		game = gameWrapper.getElementsByClassName("tic-tac-toe")[0],
+		msgWrapper = document.getElementById("turn"),
+		button = fs.getElementsByClassName("button"),
+		audioObj = new initAudio(),
+		winObj;
+
+	function initGrid(grid=3, level, e) {
+		var win = [], rows=[], col=[], diag=[];
+		//check for rows
+		for(let i=0; i<(grid*grid);) {
+			rows = [];
+			for(let j=0; j<grid; j++) {
+				rows.push(i++);
+			}
+			win.push(rows);
+		}
+		//check for columns
+		for(let i=0; i<grid; i++) {
+			col = [];
+			for(let j=0; j<grid; j++) {
+				col.push(win[j][i]);
+			}
+			win.push(col);
+		}
+		//check for diagnols
+		for(let i=0; i<2; i++) {
+			diag = [];
+			for(let j=0; j<grid; j++) {
+				if(i==0) {
+					diag.push(win[j][j]);
+				}
+				else {
+					diag.push(win[j][grid-1-j]);
+				}
+				
+			}
+			win.push(diag);
+		}
+		game.classList.remove("easy", "medium", "difficult");
+		game.classList.add(level);
+
+		renderGame(grid);
+
+		winObj = new calculateWinner(win, grid);
+
+		e.stopPropagation();
+	}
+
+	function renderGame(grid=3) {
+		var html = "";
+		game.html = "";
+		for(let i=0; i<grid; i++) {
+			for(let j=0; j<grid; j++) {
+				html += '<div class="tic-col" style="width:calc(100%/' + grid + '); height:calc(100%/' + grid + ');"></div>';
+			}
+		}
+		game.innerHTML = html;
+		gameWrapper.classList.add("show");
+		fs.classList.remove("show");
+		audioObj.playSound(audioObj.sound.playing);
+		return false;
+	}
+
+    function calculateWinner(win, grid) {
+		var ticCol = document.getElementsByClassName("tic-col"),
+			turn = true, //true for player X "X" and false for player O "O"
+			moves = 0,
+			winFlag = {"X": 0, "O": 0},
+			winCombination = [],
+			result = document.getElementById("result");
+
+		for(let i = 0; i< ticCol.length; i++) {
+			ticCol[i].addEventListener("click", function () {
+				if(this.innerText == "") {
+					moves++;
+
+					if(turn) {
+						this.innerText = "X";
+						msgWrapper.innerText = "Turn: Player O";
+					}
+					else {
+						this.innerText = "O";
+						msgWrapper.innerText = "Turn: Player X";
+					}
+
+					if(moves >= (2*grid-1) && moves <= (grid*grid)) {
+						for(let i = 0; i<win.length; i++) {
+							for(let j = 0; j<win[i].length; j++) {
+								if(ticCol[win[i][j]].innerText == "X") {
+									winFlag.X++;
+								}
+								else if (ticCol[win[i][j]].innerText == "O") {
+									winFlag.O++;
+								}
+								winCombination = win[i];
+							}
+							if(winFlag.X == grid) {
+							    winObj.showMessage("Player X wins","p1Won");
+								break;
+							}
+							else if(winFlag.O == grid) {
+							    winObj.showMessage("Player O wins", "p2Won");
+								break;
+							}
+							else {
+								winFlag.X = winFlag.O = 0;
+							}
+						}
+					}
+					if(moves == (grid*grid) && winFlag.X == 0 && winFlag.O == 0) {
+						winCombination = [];
+						winObj.showMessage("Game Over", "gameOver");
+					}
+					turn = !turn;
+				}
+			});
+		}
+
+		this.resetGame = function() {
+			for(let i of ticCol) {
+				i.classList.remove("win-com", "no-pointer-event");
+			}
+			msgWrapper.style.textAlign = "left";
+			msgWrapper.innerText = "Turn: Player X";
+
+			for(let i = 0; i< ticCol.length; i++) {
+				ticCol[i].innerText = "";
+			}
+			turn = true; //true for player X "X" and false for player O "O"
+			moves = winFlag.X = winFlag.O = 0; //reset all values
+			result.classList.remove("scale");
+			audioObj.soundEle.setAttribute("loop",true);
+			audioObj.playSound(audioObj.sound.playing);
+			return false;
+		}
+
+		this.showMessage = function(msg, res) {
+			var timer = 0;
+			msgWrapper.innerText = "TIC TAC TOE";
+			msgWrapper.style.textAlign = "center";
+			result.innerText = msg;
+			if(winCombination.length) {
+				timer = 2000;
+				for(let i = 0; i < winCombination.length; i++) {
+					ticCol[winCombination[i]].classList.add("win-com");
+				}
+				for(let i of ticCol) {
+					i.classList.add("no-pointer-event");
+				}
+				audioObj.playSound(audioObj.sound.winBg);
+			}
+			setTimeout(() => {
+            	result.classList.add("scale");
+            	audioObj.playSound(audioObj.sound[res]);
+            	audioObj.soundEle.removeAttribute("loop");
+			},timer);
+            
+	    }
+	    return false;
+	}
+
+	function exitGame() {
+		gameWrapper.classList.remove("show");
+		fs.classList.add("show");
+		winObj.resetGame();
+		audioObj.playSound("");
+		return false;
+	}
+	
+</script>
+</html>

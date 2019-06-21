@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Bounce Left Right-Varun</title>
+	<title></title>
 	<style type="text/css">
 	body{text-align: center;}
 	.dummydiv{width:200px; height:500px; background-color: #39c; display: inline-block; position: relative; cursor: pointer;}
@@ -13,61 +13,15 @@
 	    transform: translate(-50%,-50%);
 	    width: 100%;
 	}
-		.leftRightBounce{
-    -webkit-animation:leftRightBounce .5s forwards;
-    animation:leftRightBounce .5s forwards;
-    position:relative;
-}
-
-
-@-webkit-keyframes leftRightBounce {
-    0%   {left:0;}
-    20%  {left:-6px}
-    40%  {left:6px}
-    60%  {left:-6px}
-    80%  {left:6px}
-    100% {left:0;}
-}
-@-moz-keyframes leftRightBounce {
-    0%   {left:0;}
-    20%  {left:-6px}
-    40%  {left:6px}
-    60%  {left:-6px}
-    80%  {left:6px}
-    100% {left:0;}
-}
-@-ms-keyframes leftRightBounce {
-    0%   {left:0;}
-    20%  {left:-6px}
-    40%  {left:6px}
-    60%  {left:-6px}
-    80%  {left:6px}
-    100% {left:0;}
-}
-@-o-keyframes leftRightBounce {
-    0%   {left:0;}
-    20%  {left:-6px}
-    40%  {left:6px}
-    60%  {left:-6px}
-    80%  {left:6px}
-    100% {left:0;}
-}
-@keyframes leftRightBounce {
-    0%   {left:0;}
-    20%  {left:-6px}
-    40%  {left:6px}
-    60%  {left:-6px}
-    80%  {left:6px}
-    100% {left:0;}
-}
 	</style>
+	<link rel="stylesheet" type="text/css" href="leftRightBounce.css" />
 </head>
 <body>
 	<div class="dummydiv">
 		<span>Click here to see the effect</span>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="../script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(e){
 		$(".dummydiv").on('click',function(){

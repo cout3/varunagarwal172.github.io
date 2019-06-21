@@ -27,7 +27,8 @@ body {
   left: 0;
   z-index: 2;
   text-align: center;
-  font-size: 60px;
+  font-size: 54px;
+  background-color: #fff;
 }
 .pluginContainer {
   padding: 20px;
@@ -175,7 +176,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  opacity: 0.3;
+  opacity: .3;
   z-index: 0;
 }
 .pluginName {
@@ -205,14 +206,23 @@ body {
   .plugins {
     width: 25%;
   }
+  .header {
+    font-size: 36px;
+  }
 }
 @media screen and (max-width: 767px) {
   .plugins {
     width: 50%;
   }
+  .header {
+    font-size: 30px;
+  }
 }
 @media screen and (max-width: 420px) {
   .plugins {
     width: 100%;
+  }
+  .header {
+    font-size: 24px;
   }
 }

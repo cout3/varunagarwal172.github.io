@@ -1,52 +1,41 @@
 <html>
 <head>
-	<title>Snake &amp; Ladders_varun</title>
+	<title>Snake &amp; Ladders</title>
 	<style>
-		* {
-			box-sizing: border-box;
-			user-select: none;
-		}
-		.board {
-			height: 504px;
-			width:504px;
-			position: fixed;
-			margin: auto;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			border: 5px ridge red;
-		}
-		.board:after, .clearfix {
-			content:"";
-			clear: both;
-		}
-		.step-row {
-			width: 100%;
-			height:10%;
-			float:left;
-		}
-		.step-col {
-			width: 10%;
-			height:100%;
-			float:left;
-		}
-		.step-row:nth-child(even) .step-col{
+		*{box-sizing: border-box;}
+			.snake-board {
+				position: fixed;
+    			top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				width: 500px;
+				height: 500px;
+				border: 1px solid;
+				display: flex;
+    			flex-direction: column-reverse;
+			}
+			.row{width: 100%; border-bottom: 1px solid; display: flex;}
+			.row:nth-child(even) {flex-direction: row-reverse;}
+			.col{height: 100%; border-right: 1px solid;align-items: center; justify-content: center; display: flex;}
+			.chess-board .col:nth-child(even){background-color: #000}
+		.step-row:nth-child(even) .col{
 			float: right;
 		}
-		.step-col:nth-child(n) {
+		.col:nth-child(n) {
 			background-color: #00b9fc;
 		}
-		.step-col:nth-child(2n) {
+		.col:nth-child(2n) {
 			background-color: #3cba9d;
 		}
-		.step-col:nth-child(3n) {
+		.col:nth-child(3n) {
 			background-color: #75bd3e;
 		}
-		.step-col:nth-child(4n) {
+		.col:nth-child(4n) {
 			background-color: #ff9e17;
 		}
-		.step-col:nth-child(5n) {
+		.col:nth-child(5n) {
 			background-color: #e8b527;
 		}
 		.itenary {
@@ -163,10 +152,11 @@
 	</style>
 </head>
 <body>
-	<div class="board">
-		<div class="pock" id="pock1">1</div>
-		<div class="pock" id="pock2">2</div>
+	
+	<div class="snake-board">
+		
 	</div>
+
 	<div class="itenary">
 		<div id="player1" class="player active">Player 1</div>
 		<div id="player2" class="player">Player 2</div>
@@ -182,31 +172,52 @@
 		<div id="dice-number"></div>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function (e) {
-		for(var i=10; i>0; i--) {
-			$(".board").append("<div class='step-row' id='step-row"+ i +"'></div>");
-			for(var j=0;j<10;j++) {
-				$("#step-row" + i).append("<div class='step-col' data-val="+ (10*i-j) +">" + (10*i-j) + "</div>");
+	function drawBoard(grid) {
+			var board = document.getElementsByClassName("snake-board")[0],
+				colNo = 1,
+				gridDim = 50;
+				board.innerHTML = "";
+				document.getElementsByClassName("snake-board")[0].style.width = grid*gridDim;
+				document.getElementsByClassName("snake-board")[0].style.height = grid*gridDim;
+			for(let i=0; i<grid; i++) {
+				var row = document.createElement("div");
+				row.classList.add("row");
+				row.style.height = gridDim;
+
+				for(let j=0; j<grid; j++) {
+					var col = document.createElement("div");
+					col.classList.add("col");
+					col.style.width = gridDim;
+
+					col.innerText = colNo++;
+					row.appendChild(col);
+				}
+				board.appendChild(row);
 			}
+			var pockHTML = '<div class="pock" id="pock1">1</div><div class="pock" id="pock2">2</div>';
+			board.innerHTML += pockHTML;
 		}
+		drawBoard(10);
+	$(document).ready(function (e) {
+		drawBoard(10);
 		var turn = true,
 			score = {
 				'p1' : 0,
 				'p2' : 0
 			},
 			cellDim = {
-				'w': $(".step-col").outerWidth(),
-				'h': $(".step-col").outerHeight()
+				'w': $(".col").outerWidth(),
+				'h': $(".col").outerHeight()
 			},
 			pockDim = {
 				'w': $(".pock").outerWidth(),
 				'h': $(".pock").outerHeight()
 			},
 			boardPos = {
-				'left': $(".board").offset().left + 5,
-				'top': $(".board").offset().top + 5
+				'left': $(".snake-board").offset().left + 5,
+				'top': $(".snake-board").offset().top + 5
 			};
 
 		$("#dice").on("click", function (e) {
@@ -221,8 +232,8 @@
 					score.p1 += n; 
 					var pock = $("#pock1"),
 						pos = {
-							'left': $("[data-val='" + score.p1 + "']").offset().left - boardPos.left,
-							'top': $("[data-val='" + score.p1 + "']").offset().top - boardPos.top + 20
+							'left': $(".col").eq(score.p1).offset().left - boardPos.left,
+							'top': $(".col").eq(score.p1).offset().top - boardPos.top + 20
 						};
 					pock.stop().animate({'left': pos.left, 'top': pos.top});
 					 if(score.p1 == 100) { 
@@ -240,8 +251,8 @@
 					score.p2 += n;
 					var pock = $("#pock2"),
 						pos = {
-							'left': $("[data-val='" + score.p2 + "']").offset().left - boardPos.left + 20,
-							'top': $("[data-val='" + score.p2 + "']").offset().top - boardPos.top + 20
+							'left': $(".col").eq(score.p2).offset().left - boardPos.left + 20,
+							'top': $(".col").eq(score.p2).offset().top - boardPos.top + 20
 						};
 					pock.stop().animate({'left': pos.left, 'top': pos.top});
 					if(score.p2 == 100) { 

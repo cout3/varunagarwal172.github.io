@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Range Slider-Varun</title>
+	<title>Range Slider</title>
 	<style type="text/css">
 		.rangeSliderWrap {
     width: 200px;
@@ -54,7 +54,7 @@
 		<div class="rangeSliderMaxValue"></div>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="../script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(a) {
     rangeSlider()
@@ -108,5 +108,34 @@ var rangeSlider = function(a) {
         $(".rangeSliderMin,.rangeSliderMax").removeClass("draggable")
     })
 };
+class Node {
+    constructor(element) {
+        this.element = element,
+        this.next = null;
+    }
+}
+class LinkedList {
+    constructor() {
+        this.head = null,
+        this.size = null;
+    }
+
+    addNode(element) {
+        var node = new Node(element);
+        if(this.head == null) {
+            this.head = node;
+        }
+        else {
+            var current = this.head;
+            while(current) {
+                current = current.next;
+            }
+            current.next = node;
+            size++;
+            console.log(this.head);
+        }
+    }
+
+}
 </script>
 </html>
