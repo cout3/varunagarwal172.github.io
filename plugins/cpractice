@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int data;
+    struct node *next;
+};
+
+struct node *head = NULL;
+struct node *current = NULL;
+
+void insert(int num) {
+    struct node *link = (struct node*) malloc(sizeof(struct node));
+        link->data = num;
+        link->next = NULL;
+       
+        if(head==NULL) {
+            head = link;
+        }
+        else {
+            current->next = link;
+        }
+        current = link;
+}
+
+void printlist(struct node *ptr) {
+    while(ptr!=NULL) {
+        printf("%d =>", ptr->data);
+        ptr = ptr->next;
+    }
+}
+
+void reverselist(struct node *ptr) {
+    struct node *temp;
+    struct node *prev = NULL;
+    
+    while(ptr!=NULL) {
+        temp = ptr->next;
+        ptr->next = prev;
+        prev = ptr;
+        ptr = temp;
+    }
+    printlist(prev);
+}
+
+void recursivelist(struct node *ptr) {
+    struct node *temp;
+    struct node *prev = NULL;
+    
+    if(ptr!=NULL){
+        temp = ptr->next;
+        ptr->next = prev;
+        prev = ptr;
+        ptr = temp;
+        recursivelist(ptr);
+    }
+    printlist(prev);
+    
+}
+
+int main() {
+    int num, i;
+    for(i=0; i<5; i++) {
+        scanf("%d", &num);
+        insert(num);
+    }
+    
+    printf("single list");
+    printlist(head);
+    
+    printf("\reverse list");
+    reverselist(head);
+    
+    printf("\nrecursive list");
+    reverselist(head);
+    return 0;
+}
+

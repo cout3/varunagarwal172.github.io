@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Bounce Top Down-Varun</title>
+	<title></title>
 	<style type="text/css">
 	body{text-align: center;}
 	.dummydiv{width:200px; height:500px; background-color: #39c; display: inline-block; position: relative; cursor: pointer;}
@@ -13,62 +13,15 @@
 	    transform: translate(-50%,-50%);
 	    width: 100%;
 	}
-		.topDownBounce{
-    -webkit-animation:topDownBounce .5s forwards;
-    animation:topDownBounce .5s forwards;
-    position:relative;
-}
-
-
-@-webkit-keyframes topDownBounce {
-    0%   {top:0;}
-    20%  {top:-6px}
-    40%  {top:6px}
-    60%  {top:-6px}
-    80%  {top:6px}
-    100% {top:0;}
-}
-@-moz-keyframes topDownBounce {
-    0%   {top:0;}
-    20%  {top:-6px}
-    40%  {top:6px}
-    60%  {top:-6px}
-    80%  {top:6px}
-    100% {top:0;}
-}
-@-ms-keyframes topDownBounce {
-    0%   {top:0;}
-    20%  {top:-6px}
-    40%  {top:6px}
-    60%  {top:-6px}
-    80%  {top:6px}
-    100% {top:0;}
-}
-@-o-keyframes topDownBounce {
-    0%   {top:0;}
-    20%  {top:-6px}
-    40%  {top:6px}
-    60%  {top:-6px}
-    80%  {top:6px}
-    100% {top:0;}
-}
-@keyframes topDownBounce {
-    0%   {top:0;}
-    20%  {top:-6px}
-    40%  {top:6px}
-    60%  {top:-6px}
-    80%  {top:6px}
-    100% {top:0;}
-}
 	</style>
-	
+	<link rel="stylesheet" type="text/css" href="topDownBounce.css" />
 </head>
 <body>
 	<div class="dummydiv">
 		<span>Click here to see the effect</span>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="../script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(e){
 		$(".dummydiv").on('click',function(){

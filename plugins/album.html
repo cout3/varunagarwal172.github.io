@@ -1,0 +1,539 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body{font-family:"open sans"}
+p{margin: 0; padding: 0;}
+ul,li{ list-style:none; margin:0; padding:0;}
+.ls_container{width:428px; border:1px solid #e5e6ea; color:#666666; font-size:12px; font-weight:600; position:relative;}
+.ls_tabArea{background-color:#f4f6f8; float: left; width:100%;}
+.ls_tabArea .ls_tabs{ display:inline-block; padding:12px 0px; cursor:pointer; text-align:center; line-height: 16px; float: left;}
+.ls_tabArea .ls_tabs span{display: block; border-right: 1px solid #cccccc; padding: 0 20px;}
+.ls_tabArea .ls_tabs:last-child span{border-right:none;}
+.ls_active{ color:#16a085 !important; font-weight:700; background-color:#ffffff;}
+.ls_tabContentWrapper{overflow:hidden; height:330px;width:398px; margin:0 15px; position:relative;}
+.ls_tabContentArea{ background-color:#ffffff; position:relative;}
+.ls_tabContent{margin:15px 0; float:left;width: 400px; height:300px; overflow: hidden; position: relative;}
+.ls_tabContent img{top:50%; left:50%;position: relative; transform:translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%); }
+.ls_arrow,.ls_zoomContainer{ position:absolute; z-index:9; width:50px; height:300px; top:62px; cursor:pointer; top:55px;}   
+.ls_arrow i,.ls_zoomContainer i{height:56px; width:28px; display:block;left: 50%;top: 50%;position: absolute;transform: translate(-50%,-50%);opacity:.4;}
+.ls_arrow i:hover{opacity: 1;}
+.ls_LeftArrow{ left:15px;}
+.ls_rightArrow {right:15px;}
+.ls_LeftArrow i{background-position:0px -225px;}
+.ls_rightArrow i{background-position:-29px -225px;}
+.ls_sprite{background:url(ls_sprite_v2.png) no-repeat; background-size: 318px;}
+.ls_zoomContainer{height: 30px;width: 30px;display: block;right: 15px; z-index:9; background:#333333;}
+.ls_zoomContainer i{background-position: -49px -179px;height: 100%;width: 100%;display: block; opacity: 1;}
+.ls_bottomPanel,.ls_bottomPanelBG{height:36px; width:400px; position:absolute; bottom:15px; left:15px;line-height:40px;  color:#ffffff; z-index:9; padding:0 15px; box-sizing: border-box;}
+.ls_bottomPanelBG{ opacity:.55;background-color:#000; z-index:1;}
+.ls_bottomPanel span{margin:0 10px; display:inline-block; cursor:pointer; opacity:.7;}
+.ls_bottomPanel span:hover{opacity:1;}
+.ls_bottomPanel span i{ height:18px; width:18px;    margin-right: 5px; vertical-align:middle;display:inline-block;}
+.ls_iconFP{ background-position:-52px -208px;}
+.ls_iconPhoto{background-position:-15px -208px;}
+.ls_iconVideo{background-position:5px -208px;}
+.ls_iconConstruction{background-position:-35px -208px;}
+.hide{ display:none;}
+.ls_activeCat{opacity:1 !important;}
+.ls_slideMsg{ background-color: #ffffff; padding: 13px; border: 1px solid #cccccc; opacity: .96; /*height: 64px;*/ position: absolute; z-index: 8;  color:#9fa0a2; top:50%;box-sizing:border-box; width: 150px;font-weight: bold; /*white-space: nowrap; overflow: hidden;text-overflow: ellipsis;*/transform:-webkit-translate(0,-50%);transform:-ms-translate(0,-50%);transform:-o-translate(0,-50%);transform: translate(0,-50%); }
+.ls_firstSlideMsg{left:0; padding-left:35px;}
+.ls_lastSlideMsg{right:0; padding-right:35px;}
+.ls_bottomPanel em{ font-style: normal;}
+.ls_slideMsg p:first-child{color:#999999;}
+.ls_slideMsg p:last-child{color:#666666;}
+.ls_inactiveTab,[data-tab='ls_noimage']{cursor: default !important; opacity: .4 !important;}
+.clearfix{clear:both;}
+ .ls_container #ls_exploreLoc{float: right; line-height: 40px;margin-right: 15px;text-decoration: none;color: #3498db;}
+  .ls_playIconContainer{ z-index: 9; height: 70px; width: 70px; position: absolute; top:46%; left: 42%;}
+ .ls_playIconContainer i{ background-position: -250px -167px;height: 100%; width: 100%; display: block;}
+ .ls_tabs em{ font-style: normal;}
+
+ .ls_noImageText{position: absolute;left: 0;right: 0; margin: 0 auto;height: 100px;text-align: center; bottom: -10px;}
+ .ls_noImageText span{ text-align: center;}
+ .ls_noPhotoShareText{color: #999999;font-weight: 600;display: block;}
+ .ls_reqPhotoBtn{color: #fff;background: #666;width: 150px;line-height: 40px;margin-top: 5px;display: inline-block;font-size: 14px;font-weight: normal;}
+ .ls_noimage .ls_tabContent{ background-color: #f2f2f2}
+</style>
+</head>
+
+<body>
+<div class="ls_container">
+    <div class="ls_arrow ls_LeftArrow ls_interactiveIcon hide" data-dir="left" data-for="">
+        <i class="ls_sprite"></i>
+    </div>
+    <div class="ls_arrow ls_rightArrow ls_interactiveIcon" data-dir="right" data-for="">
+        <i class="ls_sprite"></i>
+    </div>
+    <div class="ls_zoomContainer ls_interactiveIcon" data-for="">
+        <i class="ls_sprite"></i>
+    </div>
+    <div class="ls_playIconContainer ls_interactiveIcon hide" data-for="">
+        <i class="ls_sprite"></i>
+    </div>
+    <ul class="ls_tabArea">
+        <li class="ls_tabs" data-tab="ls_noimage">
+            <span>New Tab (<em></em>)</span>
+        </li>
+        <li class="ls_tabs" data-tab="ls_property">
+            <span>PROPERTY (<em></em>)</span>
+        </li>
+        <li class="ls_tabs" data-tab="ls_society">
+            <span>SOCIETY (<em></em>)</span>
+
+        </li>
+        <!-- <li class="ls_tabs" data-tab="inactivetab">
+            <span>New Tab (<em></em>)</span>
+        </li> -->
+    </ul>
+    <a href="" id="ls_exploreLoc" class="hide">Explore Locality Photos</a>
+    <div class="clearfix"></div>
+    <div class="ls_noimage" data-type="tabArea">
+        <div class="ls_tabContentWrapper">
+            <ul class="ls_tabContentArea" data-slider="ls_slider" data-container="ls_noimage">
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="106x106.png" alt="No image available" class="ls_propertyImg"/>
+                    <div class="ls_noImageText">
+                        <span class="ls_noPhotoShareText">Photos not shared by advertiser</span>
+                        <span class="ls_reqPhotoBtn">Request Photos</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="ls_firstSlideMsg ls_slideMsg hide">
+                <p>Prev</p>
+                <p>Property Photos</p>
+            </div>
+            <div class="ls_lastSlideMsg ls_slideMsg hide">
+                <p>Next</p>
+                <p>Society Photos</p>
+            </div>
+        </div>
+        <div class="ls_bottomPanel hide">
+           <span class="ls_bottomPanelPhoto" data-cat="photo">
+                <i class="ls_sprite ls_iconPhoto"></i>Photos (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <span class="ls_bottomPanelVideo" data-cat="video">
+                <i class="ls_sprite ls_iconVideo"></i> Video (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <span class="ls_bottomPanelFP" data-cat="floorPlan">
+                <i class="ls_sprite ls_iconFP"></i> Floor Plan (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+        </div>
+    </div>
+    <div class="ls_property hide" data-type="tabArea">
+        <div class="ls_tabContentWrapper">
+            <ul class="ls_tabContentArea" data-slider="ls_slider" data-container="ls_property">
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <!--<li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+               <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="floorPlan">
+                    <img src="prop/floor_plan.jpg" alt="Floor Plan" class="ls_propertyImg"/>
+                </li>-->
+                
+            </ul>
+            <div class="ls_firstSlideMsg ls_slideMsg hide">
+                <p>Prev</p>
+                <p>Property Photos</p>
+            </div>
+            <div class="ls_lastSlideMsg ls_slideMsg hide">
+                <p>Next</p>
+                <p>Society Photos</p>
+            </div>
+        </div>
+        <div class="ls_bottomPanel">
+           <span class="ls_bottomPanelPhoto" data-cat="photo">
+                <i class="ls_sprite ls_iconPhoto"></i>Photos (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <!--<span class="ls_bottomPanelVideo" data-cat="video">
+                <i class="ls_sprite ls_iconVideo"></i> Video (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <span class="ls_bottomPanelFP" data-cat="floorPlan">
+                <i class="ls_sprite ls_iconFP"></i> Floor Plan (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>-->
+        </div>
+    </div>
+    <div class="ls_society hide" data-type="tabArea">
+        <div class="ls_tabContentWrapper">
+            <ul class="ls_tabContentArea" data-slider="ls_slider" data-container="ls_society">
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="video">
+                    <img src="prop/property-video.jpg" alt="video" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="photo">
+                    <img src="prop/1-property-photos.jpg" alt="Photo" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="construction">
+                    <img src="prop/floor_plan.jpg" alt="Floor Plan" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="construction">
+                    <img src="prop/floor_plan.jpg" alt="Floor Plan" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="construction">
+                    <img src="prop/floor_plan.jpg" alt="Floor Plan" class="ls_propertyImg"/>
+                </li>
+                <li class="ls_tabContent" data-type="construction">
+                    <img src="prop/floor_plan.jpg" alt="Floor Plan" class="ls_propertyImg"/>
+                </li>
+            </ul>
+            <div class="ls_firstSlideMsg ls_slideMsg hide">
+                <p>Prev</p>
+                <p>Property Photos</p>
+            </div>
+            <div class="ls_lastSlideMsg ls_slideMsg hide">
+                <p>Next</p>
+                <p>New Tab Photos</p>
+            </div>
+        </div>
+        <div class="ls_bottomPanel">
+             <span class="ls_bottomPanelVideo" data-cat="video">
+                <i class="ls_sprite ls_iconVideo"></i> Video (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <span class="ls_bottomPanelPhoto" data-cat="photo">
+                <i class="ls_sprite ls_iconPhoto"></i> Photos (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+            <span class="ls_construction" data-cat="construction">
+                <i class="ls_sprite ls_iconFP"></i> Construction (<em class="ls_slideCounter"></em><em>/</em><em class="ls_slideTotal"></em>)
+            </span>
+        </div>
+    </div>
+    <div class="ls_bottomPanelBG"></div>
+</div>
+<br /><br /><br />
+<input type="button" value="Check for no tab" id="notab">
+<script src="../jquery-2.2.3.min.js"></script>
+<script>
+var ls_active = {
+    tabName: "",
+    slideName: "",
+    slideIndex: 0,
+    subCatName: "",
+    tabsLen: 0,
+    allTabs: new Array(),
+    tabChildsLen: new Array(),
+    tabCat: new Array(),
+    tabCatLen: new Array(),
+    counter: 1
+}
+
+var animateLeft=0;
+var initInactiveTabLen = 0;
+function ls_init(ls_active){
+    $(".ls_tabs").each(function(){
+        (ls_active.allTabs).push($(this).attr("data-tab"));
+        (ls_active.tabChildsLen)[$(this).attr("data-tab")] = $("[data-container='"+ $(this).attr("data-tab") +"'] li").length;
+        $(this).find("em").text($("[data-container='"+ $(this).attr("data-tab") +"'] .ls_tabContent").length);
+        if(parseInt($(this).find("em").text()) == 0){
+            $(this).addClass("ls_inactiveTab");
+            if(ls_active.tabsLen == 0){
+                initInactiveTabLen++;
+            }
+        }
+        else{
+            ls_active.tabsLen++;
+        }
+    });
+
+    $(".ls_tabs:not(.ls_inactiveTab)").eq(0).addClass("ls_active");
+    ls_active.tabName = $.trim($(".ls_tabs.ls_active").attr("data-tab"));
+    (ls_active.tabName == "ls_noimage") ? $(".ls_bottomPanelBG").hide() : $(".ls_bottomPanelBG").show();
+
+    $("[data-container='"+ ls_active.tabName +"'] .ls_tabContent").eq(0).addClass("ls_active");
+    ls_active.slideName = $("[data-container='"+ ls_active.tabName +"'] .ls_tabContent.ls_active").attr("data-type");
+    $("." + ls_active.tabName + " .ls_bottomPanel span").eq(0).addClass("ls_activeCat");
+    ls_active.subCatName = $("." + ls_active.tabName + " .ls_bottomPanel span.ls_activeCat").attr("data-cat");
+
+    $(".ls_interactiveIcon").attr("data-for", ls_active.tabName);
+    
+
+    $.each(ls_active.allTabs,function(i,v){
+        (ls_active.tabCat)[v] = new Array();
+        (ls_active.tabCatLen)[v] = new Array();
+        $("." + v + " .ls_bottomPanel span").each(function(){
+            (ls_active.tabCat)[v].push($(this).attr("data-cat"));
+            (ls_active.tabCatLen)[v][$(this).attr("data-cat")] = $("[data-container='"+ v +"'] [data-type='" + $(this).attr("data-cat") + "']").length;
+            $(this).find(".ls_slideTotal").text((ls_active.tabCatLen)[v][$(this).attr("data-cat")]);
+            //console.log((ls_active.tabCatLen)[v])
+        });
+        $('[data-container="'+ v +'"]').css({"width":($('[data-container="'+ v +'"] .ls_tabContent').length * 400) + "px"});
+    });
+    if((ls_active.tabsLen == 1 && ls_active.tabChildsLen[ls_active.tabName] <= 1)){
+        $(".ls_arrow").hide();
+    }
+    if(ls_active.tabsLen == 0){
+        $(".ls_interactiveIcon").hide();
+    }
+    ls_setCounters();
+    ls_showArrows();
+    $('[data-tab="ls_noimage"]').find("em").text(0);
+}
+
+$(document).ready(function(e) {
+    ls_init(ls_active);
+   $(".ls_tabs:not(.ls_inactiveTab)").on('click',function(e){
+       if(ls_active.tabsLen > 1){
+            $(".ls_tabs").removeClass("ls_active");
+            $(this).addClass("ls_active");
+            ls_changeTabs();
+        }
+   });
+   $(".ls_bottomPanel span").on("click", function(e){
+        ls_active.counter = 1;
+        $(".ls_bottomPanel span").removeClass("ls_activeCat");
+        $(this).addClass("ls_activeCat");
+        ls_active.subCatName = $("." + ls_active.tabName + " .ls_bottomPanel span.ls_activeCat").attr("data-cat"); 
+        ls_setCounters();
+        ls_showArrows("subCategory");
+   });
+   $(".ls_arrow").on("click",function(e){
+        var dir = $(this).attr("data-dir");
+        ls_slide(dir);
+   });
+   $(".ls_arrow").hover(function(e){
+       var dir = $(this) .attr("data-dir");
+       ls_showSlideMsg(dir)
+    },
+    function(e){
+        $(".ls_slideMsg").hide();
+   });
+});
+function ls_slide(dir){
+    $(".ls_slideMsg").hide();
+    switch(dir){
+        case "right":   animateLeft = parseInt((ls_active.slideIndex + 1) *  $(".ls_tabContent").width());
+                        if(ls_active.slideIndex < (ls_active.tabChildsLen[ls_active.tabName] - 1)){
+                            $("[data-container='" + ls_active.tabName + "']").stop(true).animate({"left": "-" + animateLeft});
+                            ls_active.slideIndex++;
+                            ls_active.counter++;
+                            $(".ls_tabContent").removeClass("ls_active");
+                            $("." + ls_active.tabName + " .ls_tabContent").eq(ls_active.slideIndex).addClass("ls_active");
+                            $(".ls_LeftArrow").show();
+                            ls_setCounters();
+                            ls_showSlideMsg(dir);
+                        }
+                        else if(ls_active.slideIndex == (ls_active.tabChildsLen[ls_active.tabName] - 1) && $("[data-tab='"+ ls_active.tabName +"']").index() < ls_active.tabsLen && !($("[data-tab='"+ ls_active.tabName +"']").next().hasClass("ls_inactiveTab"))){
+                            $(".ls_tabs").removeClass("ls_active");
+                            $(".ls_tabs[data-tab='"+ls_active.tabName+"']").next(".ls_tabs:not(.inactivetab)").addClass("ls_active");
+                            ls_changeTabs();
+                            
+                        }
+                        if(ls_active.slideIndex == (ls_active.tabChildsLen[ls_active.tabName] - 1)){
+                            if(($("[data-tab='"+ ls_active.tabName +"']").index() - initInactiveTabLen) == ls_active.tabsLen - 1 || $("[data-tab='"+ ls_active.tabName +"']").next().hasClass("ls_inactiveTab") || ls_active.tabsLen == 1){
+                                    $(".ls_rightArrow").hide();
+                                }
+                        }
+                        else{
+                            $(".ls_rightArrow").show();
+                        }
+                        break;
+
+        case "left":    animateLeft = parseInt((ls_active.slideIndex - 1) *  $(".ls_tabContent").width());
+                        if(ls_active.slideIndex > 0){
+                            $("[data-container='" + ls_active.tabName + "']").stop(true).animate({"left": "-" + animateLeft});
+                            ls_active.slideIndex--;
+                            ls_active.counter--;
+                            $(".ls_tabContent").removeClass("ls_active");
+                            $("." + ls_active.tabName + " .ls_tabContent").eq(ls_active.slideIndex).addClass("ls_active");
+                            $(".ls_rightArrow").show();
+                            ls_setCounters();
+                            ls_showSlideMsg(dir)
+                        }
+                        else if(ls_active.slideIndex == 0 && $("[data-tab='"+ ls_active.tabName +"']").index() > 0 && !($("[data-tab='"+ ls_active.tabName +"']").prev().hasClass("ls_inactiveTab"))){
+                            $(".ls_tabs").removeClass("ls_active");
+                            $(".ls_tabs[data-tab='"+ls_active.tabName+"']").prev(".ls_tabs:not(.inactivetab)").addClass("ls_active");
+                            ls_changeTabs();
+                            
+                        }
+                        if(ls_active.slideIndex == 0 && ($("[data-tab='"+ ls_active.tabName +"']").index() == 0 || $("[data-tab='"+ ls_active.tabName +"']").prev().hasClass("ls_inactiveTab") || ls_active.tabsLen == 1)){
+                            $(".ls_LeftArrow").hide();
+                        }
+                        else{
+                            $(".ls_LeftArrow").show();
+                        } 
+                        if(ls_active.slideIndex > 0 || $("[data-tab='"+ ls_active.tabName +"']").index() < ls_active.tabsLen ){
+                            $(".ls_rightArrow").show();
+                        }
+                        break;
+
+        default: break;
+    }
+}
+function ls_changeTabs(){
+    ls_active.counter = 1;
+    ls_active.tabName = $(".ls_tabs.ls_active").attr("data-tab");
+    $("." + ls_active.tabName + " .ls_tabContent").eq(0).addClass("ls_active");
+    $("[data-type='tabArea']").hide();
+    $("." + ls_active.tabName).show();
+    $(".ls_bottomPanel span").removeClass("ls_activeCat");
+    $("." + ls_active.tabName).find(".ls_bottomPanel span").eq(0).addClass("ls_activeCat");
+    ls_active.subCatName = $("." + ls_active.tabName).find(".ls_bottomPanel span.ls_activeCat").attr("data-cat");
+    ls_setCounters();
+    ls_showArrows("tab");
+    $(".ls_interactiveIcon").attr("data-for", ls_active.tabName);
+}
+function ls_setCounters(){
+    $(".ls_slideCounter").text("");
+    $(".ls_slideCounter").next("em").hide();   
+    ls_active.slideName = $("." + ls_active.tabName + " .ls_tabContent.ls_active").attr("data-type");
+    if(ls_active.counter <= ls_active.tabCatLen[ls_active.tabName][ls_active.subCatName] && ls_active.counter != 0){
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ls_active.subCatName+"] .ls_slideCounter").text(ls_active.counter);
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ls_active.subCatName+"] .ls_slideCounter").next("em").show();
+    }
+    else if(ls_active.counter == 0){
+        ls_active.subCatName = $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ls_active.slideName +"]").attr("data-cat");
+        ls_active.counter = ls_active.tabCatLen[ls_active.tabName][ls_active.subCatName];
+        $(".ls_bottomPanel span").removeClass("ls_activeCat");
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat=" + ls_active.subCatName + "]").addClass("ls_activeCat");
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ ls_active.subCatName +"] .ls_slideCounter").text(ls_active.counter);
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ ls_active.subCatName +"] .ls_slideCounter").next("em").show();
+    }
+    else{
+        ls_active.counter = 1;
+        $(".ls_bottomPanel span").removeClass("ls_activeCat");
+        ls_active.subCatName = $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ls_active.slideName +"]").attr("data-cat");
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat=" + ls_active.subCatName + "]").addClass("ls_activeCat");
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ ls_active.subCatName +"] .ls_slideCounter").text(ls_active.counter);
+        $("." + ls_active.tabName + " .ls_bottomPanel span[data-cat="+ ls_active.subCatName +"] .ls_slideCounter").next("em").show();
+    }
+    (ls_active.subCatName == "video")?$(".ls_playIconContainer").show():$(".ls_playIconContainer").hide();
+    $(".ls_lastSlideMsg").hide();
+    (ls_active.tabName == "ls_noimage") ? $(".ls_bottomPanelBG,.ls_zoomContainer").hide() : $(".ls_bottomPanelBG,.ls_zoomContainer").show();
+    return true;
+}
+function ls_showArrows(choice){
+    switch(choice){
+        case "tab": if($("." + ls_active.tabName).prev().attr('data-type') == "tabArea"){
+                        if(!($("." + ls_active.tabName).prev().hasClass("ls_inactiveTab"))){
+                           $(".ls_LeftArrow").show();
+                        }
+                    }
+                    else{
+                        $(".ls_LeftArrow").hide();
+                    }
+                    if((ls_active.tabChildsLen)[ls_active.tabName] > 1 || $("[data-tab='"+ ls_active.tabName +"']").index() < ls_active.tabsLen - 1){
+                       $(".ls_rightArrow").show();
+                    }
+                    else{
+                        $(".ls_rightArrow").hide();
+                    }
+                    break;
+        case "subCategory": if($("[data-cat='" + ls_active.subCatName + "']").index() == 0 && $("." + ls_active.tabName).prev().attr('data-type') == "tabArea"){
+                                $(".ls_LeftArrow").show();
+                            }
+                            else if($("[data-cat='" + ls_active.subCatName + "'].ls_activeCat").index() > 0){
+                                $(".ls_LeftArrow").show();
+                            }
+                            else{
+                                $(".ls_LeftArrow").hide(); 
+                            }
+                            if($("[data-cat='" + ls_active.subCatName + "']").index() >= 0){
+                                if(parseInt($("[data-cat='" + ls_active.subCatName + "'] .ls_slideTotal").text()) > 1 || $("." + ls_active.tabName).next().attr('data-type') == "tabArea")
+                                {
+                                    $(".ls_rightArrow").show();
+                                }
+                                else if(ls_active.tabChildsLen[ls_active.tabName] > 1 && $("[data-cat='" + ls_active.subCatName + "']").index() == 0){
+                                    $(".ls_rightArrow").show();
+                                }
+                                else{
+                                    $(".ls_rightArrow").hide(); 
+                                }
+                            }
+                            else{
+                                $(".ls_rightArrow").hide(); 
+                            }
+                            break;
+    }
+    $(".ls_tabContent").removeClass("ls_active");
+    $("." + ls_active.tabName + " .ls_tabContent[data-type='"+ ls_active.subCatName +"']").eq(0).addClass("ls_active");
+    ls_active.slideIndex = $("." + ls_active.tabName + " .ls_tabContent.ls_active").index();
+    animateLeft = parseInt(ls_active.slideIndex *  $(".ls_tabContent").width());
+    $("." + ls_active.tabName + " .ls_tabContentArea").css({"left":"-" + animateLeft + "px"});
+    (ls_active.subCatName == "video")?$(".ls_playIconContainer").show():$(".ls_playIconContainer").hide();
+    ls_active.slideName = $("." + ls_active.tabName + " .ls_tabContent.ls_active").attr("data-type");
+}
+function ls_showSlideMsg(dir){
+    if(dir == "right"){
+        (ls_active.slideIndex == (ls_active.tabChildsLen[ls_active.tabName] - 1) && $("[data-tab='"+ ls_active.tabName +"']").index() < ls_active.tabsLen && !($("[data-tab='"+ ls_active.tabName +"']").next().hasClass("ls_inactiveTab")))?$("." + ls_active.tabName + " .ls_lastSlideMsg").show():$("." + ls_active.tabName + " .ls_lastSlideMsg").hide();
+		//var msgTop = ($(".ls_tabContent.ls_active").outerHeight() - $("." + ls_active.tabName + " .ls_lastSlideMsg").outerHeight() + 30)/2;
+		//console.log($(".ls_tabContent.ls_active").outerHeight(),'---------',$("." + ls_active.tabName + " .ls_lastSlideMsg").outerHeight())
+		//$("." + ls_active.tabName + " .ls_lastSlideMsg").css({'top': msgTop + 'px'});
+   }
+   else if(dir == "left")
+   {
+    (ls_active.slideIndex == 0 && $("[data-tab='"+ ls_active.tabName +"']").index() > 0 && !($("[data-tab='"+ ls_active.tabName +"']").prev().hasClass("ls_inactiveTab")))?$("." + ls_active.tabName + " .ls_firstSlideMsg").show():$("." + ls_active.tabName + " .ls_firstSlideMsg").hide();
+		//var msgTop = ($(".ls_tabContent.ls_active").outerHeight() - $("." + ls_active.tabName + " .ls_firstSlideMsg").outerHeight() + 30)/2;
+		//$("." + ls_active.tabName + " .ls_firstSlideMsg").css({'top': msgTop + 'px'});
+   }
+}
+</script>
+</body>
+</html>

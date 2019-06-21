@@ -1,0 +1,29 @@
+Note: For html structure, please follow the html markup in respective html pages.
+
+
+For jQuery, please follow below steps that shows the use of "data-" attributes used in various plugins:
+
+/*For draggable*/
+1. [data-drag="draggable"] - This attribute should be apllied to element to make it draggable on screen.
+
+/*For tooltip*/
+1. [data-toolpar="toolTipWrapper"] - This attribute should be applied to the element, we want to show tootip on its hover.
+
+2. [data-type="toolTipText"] - This element should be applied to the element into which tooltip textis written. This element will be shouwn on hover of [data-toolpar="toolTipWrapper"]
+
+/*For pregressive bar with timer*/
+1. Time should be in html text and must be in min. in the format 02:00 e.g. for 2 minutes.
+
+2. Call sesExpBar($("#id_of_wrapper")). Only bar and time correspond to "id_of_wrapper" will start.
+
+3. html format for the same should be:
+			<div data-wrap="barTimer" id="eoiLyr_verifyCall">
+				<div class="eoiLyr_sesExpBar" data-bar="progressiveBar">
+					<p class="eoiLyr_sesExpCover" data-cover="progresser"></p>
+				</div>
+				<p class="eoiLyr_sesExpText">This session will expire in <span class="sb" data-timer="timer">02:00</span> minutes.</p>
+			</div>
+
+4. css for the same should be:
+			[data-wrap="barTimer"] [data-bar="progressiveBar"]{width:100%; background-color: #ccc; position: relative;height: 7px; border-radius: 2px !important;}
+			[data-wrap="barTimer"] [data-cover="progresser"]{position: absolute; width:0; height: 7px; border-radius: 2px !important; top:0; left:0; background-color: #16a183;}

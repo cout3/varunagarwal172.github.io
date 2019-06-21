@@ -33,7 +33,7 @@ $(document).ready(function (e) {
 
 	//code to evaluate the player score and update highest score if it is lesser than player score
 	$(".game-board-wrapper").on("click", ".board-cell", function (e) {
-		$(this).hasClass("active") ? playerScore++ : playerScore--;
+		$(this).hasClass("active") ? playerScore++ : (playerScore > 0 ? playerScore-- : playerScore = 0);
 		
 		$(".game-player-score span").text(playerScore);
 

@@ -1,0 +1,191 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	width: calc(100% - 200px);
+	margin: 0 auto;
+	font-size: 14px;
+	color: #000;
+	font-weight: 400;
+}
+ul, li, p, h1, h2, h3, h4 {
+	margin: 0; padding: 0;
+}
+ul {
+	list-style: none;
+}
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+.clearfix {
+	clear: both;
+}
+.bold {
+	font-weight: 600;
+}
+.header {
+    position: fixed;
+    width: calc(100% - 160px);
+    left: 80px;
+    top: 0;
+    padding: 10px 0;
+    height: 50px;
+}
+.header:after, .body_content_heading:after, .used_channel_container:after, .sensor_info_container:after, .channel-buttons:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.header_left {
+    float: left;
+    width: 40%;
+    color: #0e0e96;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.header_right {
+    width: 60%;
+    float: right;
+}
+.menus {
+    line-height: 30px;
+    color: #272782;
+    float: left;
+}
+.menus:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.menus li {
+    float: left;
+    padding: 0 10px;
+    background: #ccc;
+    margin-left: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.header_right_icons {
+	float: right;
+}
+.page_body {
+    margin-top: 50px;
+    padding-top: 100px;
+}
+.body_header {
+	color: #000;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+.body_content_container {
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.body_content_heading {
+	margin-bottom: 20px;
+}
+.body_content_heading h2 {
+	font-size: 24px;
+    font-weight: 300;
+    color: #0e0e96;
+    max-width: 60%;
+    float: left;
+    line-height: 30px;
+}
+.available_channel {
+    float: right;
+    max-width: 40%;
+    margin-top: 10px;
+}
+.sensor_info_container {
+	margin-bottom: 20px;
+}
+.sensor_info_box {
+    float: left;
+    max-width: 300px;
+    padding-right: 50px;
+}
+.sensor_info_box label {
+    font-size: 14px;
+    color: #272782;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.sensor_info_box input{
+	padding: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.used_channel_head {
+    width: 40%;
+    float: left;
+}
+.used_channel_head h4{
+    font-size: 18px;
+    font-weight: 300;
+}
+.channel-buttons {
+    float: right;
+    max-width: 60%;
+    font-size: 16px;
+    color: #0e0e96;
+}
+.channel-buttons div{
+    float: left;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.channel-buttons div:hover {
+	color: #000;
+}
+.channel-buttons div:last-child {
+	margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

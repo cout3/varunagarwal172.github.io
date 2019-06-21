@@ -1,0 +1,47 @@
+.topDownBounce{
+    -webkit-animation:topDownBounce .5s forwards;
+    animation:topDownBounce .5s forwards;
+    position:relative;
+}
+
+
+@-webkit-keyframes topDownBounce {
+    0%   {top:0;}
+    20%  {top:-6px}
+    40%  {top:6px}
+    60%  {top:-6px}
+    80%  {top:6px}
+    100% {top:0;}
+}
+@-moz-keyframes topDownBounce {
+    0%   {top:0;}
+    20%  {top:-6px}
+    40%  {top:6px}
+    60%  {top:-6px}
+    80%  {top:6px}
+    100% {top:0;}
+}
+@-ms-keyframes topDownBounce {
+    0%   {top:0;}
+    20%  {top:-6px}
+    40%  {top:6px}
+    60%  {top:-6px}
+    80%  {top:6px}
+    100% {top:0;}
+}
+@-o-keyframes topDownBounce {
+    0%   {top:0;}
+    20%  {top:-6px}
+    40%  {top:6px}
+    60%  {top:-6px}
+    80%  {top:6px}
+    100% {top:0;}
+}
+@keyframes topDownBounce {
+    0%   {top:0;}
+    20%  {top:-6px}
+    40%  {top:6px}
+    60%  {top:-6px}
+    80%  {top:6px}
+    100% {top:0;}
+}
