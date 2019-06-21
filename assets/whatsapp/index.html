@@ -108,7 +108,7 @@
 		function getData(url, callback) {
 			var xhr = new XMLHttpRequest();
 
-			xhr.open("POST", url, true);
+			xhr.open("GET", url, true);
 			xhr.responseType = "json";
 
 			xhr.onload = function () {
