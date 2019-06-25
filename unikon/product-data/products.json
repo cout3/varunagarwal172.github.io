@@ -1,0 +1,156 @@
+{
+	"Ceiling Fan" : [
+		{
+			"img_src": "/unikon/img/product/ceiling/creta.png",
+			"model": "Creta",
+			"sweep": "1200",
+			"color": "Rose Gold Mettalic | Matt D Brown Metallic"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/ranger_750x400.png",
+			"model": "Ranger",
+			"sweep": "1200",
+			"color": "Bakers Brown | Indigo Blue | Pearl Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/sandy_750x400.png",
+			"model": "Sandy",
+			"sweep": "1200",
+			"color": "Bakers Brown | Indigo Blue"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/force_750x400.png",
+			"model": "Force",
+			"sweep": "1200",
+			"color": "Coco Brown | Satin Gold"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/orio_650x400.png",
+			"model": "Orio Metallic DLX",
+			"sweep": "1200",
+			"color": "A. Gold | Indigo Blue | Pearl Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/passion_800x450.png",
+			"model": "Passion",
+			"sweep": "1200",
+			"color": "Bakers Brown | Ginger Gold | Silver Blue | Beige Gold"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/cool_breeza_750x400.png",
+			"model": "Cool Breeze Deco",
+			"sweep": "1200",
+			"color": "Matt Brown | Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/elegance_750x400.png",
+			"model": "Elegance",
+			"sweep": "1200",
+			"color": "Bakers Brown | Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/breeza_750x400.png",
+			"model": "Breeza",
+			"sweep": "1200",
+			"color": "Brown | Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/panther_850x500.png",
+			"model": "Panther",
+			"sweep": "1200",
+			"color": "Brown"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/classic_dlx_800x450.png",
+			"model": "Classic DLX",
+			"sweep": "1200",
+			"color": "Brown | Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/ceiling/runner_850x500.png",
+			"model": "Runner",
+			"sweep": "1200",
+			"color": "Brown | Blue/Silver | Cherry/Ivory"
+		}
+	],
+	"High-Speed Fan" : [
+		{
+			"img_src": "/unikon/img/product/small/highspeed_500x400.png",
+			"model": "Cool Breeze Plain",
+			"sweep": "600",
+			"color": "Ivory | Cherry | Blue"
+		},
+		{
+			"img_src": "/unikon/img/product/small/orio_500x400.png",
+			"model": "Orio",
+			"sweep": "600",
+			"color": "A.Gold | Indigo Blue | Pearl Ivory"
+		},
+		{
+			"img_src": "/unikon/img/product/small/ranger_550x400.png",
+			"model": "Ranger",
+			"sweep": "600",
+			"color": "Bakers Brown | Indigo Blue | Pearl Ivory"
+		}
+	],
+	"Table Fan" : [
+		{
+			"img_src": "/unikon/img/product/table/breeza_500x600.png",
+			"model": "Breeza",
+			"sweep": "400",
+			"color": "Ivory | Cherry | Blue"
+		},
+		{
+			"img_src": "/unikon/img/product/table/dzire_500x600.png",
+			"model": "Dzire",
+			"sweep": "400",
+			"color": "-"
+		},
+		{
+			"img_src": "/unikon/img/product/table/polo_500x600.png",
+			"model": "Polo",
+			"sweep": "400",
+			"color": "-"
+		},
+		{
+			"img_src": "/unikon/img/product/table/polymac_500x600.png",
+			"model": "Poly Mac",
+			"sweep": "400",
+			"color": "-"
+		}
+	],
+	"Wall Fan" : [
+		{
+			"img_src": "/unikon/img/product/table/global_500x600.png",
+			"model": "Global",
+			"sweep": "400",
+			"color": "-"
+		},
+		{
+			"img_src": "/unikon/img/product/table/luxar_500x600.png",
+			"model": "Luxar",
+			"sweep": "400",
+			"color": "-"
+		}
+	],
+	"Pedestal Fan" : [
+		{
+			"img_src": "/unikon/img/product/long/aero_500x1150.png",
+			"model": "Aero",
+			"sweep": "400",
+			"color": "-"
+		},
+		{
+			"img_src": "/unikon/img/product/long/summercool_500x1150.png",
+			"model": "Summer Cool",
+			"sweep": "400",
+			"color": "-"
+		},
+		{
+			"img_src": "/unikon/img/product/long/superflow_500x1150.png",
+			"model": "Super Flow",
+			"sweep": "400",
+			"color": "-"
+		}
+	]
+}
