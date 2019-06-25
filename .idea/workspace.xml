@@ -2,7 +2,188 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b11700fc-78a6-43d5-b577-d807f5a53774" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/unikon/tnc.html" beforeDir="false" afterPath="$PROJECT_DIR$/unikon/tnc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/fan9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/fan9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/filler.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/filler.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/icon_512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/icon_512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/img25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/img25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/img52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/img52.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/img55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/img55.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/classic_dlx_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/classic_dlx_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/classic_dlx_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/classic_dlx_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/cool_breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/cool_breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/cool_breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/cool_breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/creta.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/creta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/creta_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/creta_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/elegance_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/elegance_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/elegance_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/elegance_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/force_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/force_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/force_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/force_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/orio_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/orio_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/orio_650x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/orio_650x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/panther_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/panther_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/panther_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/panther_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/passion_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/passion_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/passion_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/passion_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/ranger_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/ranger_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/ranger_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/ranger_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/runner_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/runner_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/runner_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/runner_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/sandy_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/sandy_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/ceiling/sandy_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/ceiling/sandy_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/long/aero_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/long/aero_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/long/summercool_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/long/summercool_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/long/superflow_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/long/superflow_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/small/highspeed_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/small/highspeed_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/small/orio_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/small/orio_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/small/ranger_550x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/small/ranger_550x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/breeza_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/breeza_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/dzire_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/dzire_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/global_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/global_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/luxar_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/luxar_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/polo_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/polo_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/img/product/table/polymac_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/img/product/table/polymac_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/product-data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/product-data/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/script/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/script/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/script/jquery-3.4.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/script/jquery-3.4.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/script/jquery.lazy.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/script/jquery.lazy.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/script/less.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/script/less.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/script/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/1_Page_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/1_Page_12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/edited/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/edited/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img copy/edited/creta.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img copy/edited/creta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_04.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_05.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_07.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_08.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_09.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/1_Page_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/1_Page_12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/aero_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/aero_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/breeza_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/breeza_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/classic_dlx_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/classic_dlx_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/classic_dlx_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/classic_dlx_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/cool_breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/cool_breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/cool_breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/cool_breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/creta.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/creta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/creta_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/creta_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/dzire_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/dzire_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/elegance_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/elegance_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/elegance_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/elegance_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/force_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/force_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/force_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/force_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/global_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/global_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/highspeed_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/highspeed_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/luxar_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/luxar_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/aero_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/aero_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/breeza_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/breeza_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/classic_dlx_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/classic_dlx_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/classic_dlx_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/classic_dlx_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/cool_breeza_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/cool_breeza_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/cool_breeza_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/cool_breeza_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/creta.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/creta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/creta_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/creta_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/dzire_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/dzire_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/elegance_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/elegance_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/elegance_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/elegance_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/force_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/force_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/force_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/force_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/global_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/global_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/highspeed_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/highspeed_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/luxar_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/luxar_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/orio_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/orio_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/orio_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/orio_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/orio_650x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/orio_650x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/panther_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/panther_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/panther_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/panther_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/passion_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/passion_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/passion_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/passion_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/polo_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/polo_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/polymac_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/polymac_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/ranger_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/ranger_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/ranger_550x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/ranger_550x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/ranger_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/ranger_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/runner_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/runner_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/runner_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/runner_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/sandy_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/sandy_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/sandy_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/sandy_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/summercool_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/summercool_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/optimised/superflow_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/optimised/superflow_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/orio_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/orio_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/orio_500x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/orio_500x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/orio_650x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/orio_650x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/panther_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/panther_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/panther_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/panther_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/passion_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/passion_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/passion_800x450.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/passion_800x450.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/polo_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/polo_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/polymac_500x600.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/polymac_500x600.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/ranger_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/ranger_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/ranger_550x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/ranger_550x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/ranger_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/ranger_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/runner_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/runner_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/runner_850x500.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/runner_850x500.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/sandy_1250x700.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/sandy_1250x700.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/sandy_750x400.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/sandy_750x400.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/summercool_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/summercool_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/separate_img/edited/superflow_500x1150.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/separate_img/edited/superflow_500x1150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/fontello.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/fontello.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/fontello.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/fontello.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/fontello.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/fontello.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/fontello.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/fontello.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/fontello.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/fontello.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/font/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/font/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/fontello.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/fontello.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/style/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/style/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/tnc.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/tnc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/about-us.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/about-us.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/email.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/enquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/enquiry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/logo.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/logo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/modal.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/modal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unikon/views/product-listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/unikon/views/product-listing.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,10 +206,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unikon/tnc.html">
+        <entry file="file://$PROJECT_DIR$/assets/unikon/tnc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="345">
+              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -201,12 +382,14 @@
               <item name="varunagarwal172.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="varunagarwal172.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="whatsapp" type="462c0819:PsiDirectoryNode" />
+              <item name="unikon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="varunagarwal172.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="varunagarwal172.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="unikon" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -216,6 +399,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="Less" />
@@ -223,17 +407,17 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/style" />
+      <recent name="$PROJECT_DIR$/script" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/icons" />
       <recent name="$PROJECT_DIR$/tictactoe/images" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/script" />
       <recent name="$PROJECT_DIR$/style" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/style" />
-      <recent name="$PROJECT_DIR$/script" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -248,7 +432,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.tnc.html">
     <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/varunagarwal172.github.io/tictactoe/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -258,8 +442,12 @@
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/varunagarwal172.github.io/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="tnc.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/varunagarwal172.github.io/assets/unikon/tnc.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.tnc.html" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.index.html (2)" />
         <item itemvalue="JavaScript Debug.index.html (1)" />
@@ -278,16 +466,15 @@
       <updated>1561099511253</updated>
       <workItem from="1561099512513" duration="4466000" />
       <workItem from="1561105176781" duration="3406000" />
-      <workItem from="1561471634005" duration="137000" />
+      <workItem from="1561471634005" duration="989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8009000" />
+    <option name="totallyTimeSpent" value="8861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24876674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -509,10 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unikon/tnc.html">
+    <entry file="file://$PROJECT_DIR$/assets/unikon/tnc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="345">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
         </state>
       </provider>
     </entry>
